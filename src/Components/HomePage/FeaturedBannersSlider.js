@@ -19,7 +19,7 @@ const FeaturedBannersSlider = () => {
     const [error, setError] = React.useState(null)
     const [isLoading, setIsLoading] = React.useState(false);
 
-    const URL = 'http://localhost:8080/en-us/featured-banners.json';
+    const URL = 'https://raw.githubusercontent.com/Herkom/wa-react-2021-q4-capstone-project/feat/deliverable1/mocks/en-us/featured-banners.json';
 
     React.useEffect(() => {
         setIsLoading(true);
