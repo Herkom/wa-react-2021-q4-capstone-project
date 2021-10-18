@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import logo from '../assets/svgs/logo.svg';
-import searchIcon from '../assets/svgs/search.svg';
-import cartIcon from '../assets/svgs/cart.svg';
+import logo from 'assets/svgs/logo.svg';
+import searchIcon from 'assets/svgs/search.svg';
+import cartIcon from 'assets/svgs/cart.svg';
 
 const HeaderStyles = styled.header`
     height: 100px;

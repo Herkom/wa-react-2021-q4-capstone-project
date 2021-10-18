@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import rightArrow from '../../../src/assets/svgs/right-arrow.svg';
-import leftArrow from '../../../src/assets/svgs/left-arrow.svg';
+import rightArrow from 'assets/svgs/right-arrow.svg' ;
+import leftArrow from 'assets/svgs/left-arrow.svg';
 
 const SVG = styled.div`
     display: flex;
