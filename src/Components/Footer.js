@@ -10,13 +10,14 @@ const FooterElement = styled.footer`
     color: white;
     background-color: #666666;
     font: 400 1rem/1.5rem 'Mulish', sans-serif;
-`
+`;
+
 const Footer = () => {
     return(
             <FooterElement>
                 <p>© 2021 - Ecommerce created during Wizeline’s Academy React Bootcamp™</p>
             </FooterElement>
     );
-}
+};
 
-export { Footer }
+export default Footer

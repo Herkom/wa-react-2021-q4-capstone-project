@@ -8,7 +8,7 @@ const DotContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-`
+`;
 
 const Dot = styled.span`
     padding: 10px;
@@ -16,7 +16,7 @@ const Dot = styled.span`
     cursor: pointer;
     border-radius: 50%;
     background: ${props => props.active ? 'black' : 'white'};
-`
+`;
 
 const Dots = ({ slides, activeSlide }) => {
   return (
@@ -25,7 +25,7 @@ const Dots = ({ slides, activeSlide }) => {
         <Dot key={i} active={activeSlide === i} />
       ))}
     </DotContainer>
-  )
-}
+  );
+};
 
-export { Dots }
+export default Dots

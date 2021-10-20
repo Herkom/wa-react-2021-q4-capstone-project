@@ -1,6 +1,6 @@
-import { Header } from './Components/Header.js'
-import { Footer } from './Components/Footer.js'
-import { Content } from './Components/Content.js'
+import Header from './Components/Header'
+import Footer from './Components/Footer'
+import Content from './Components/Content'
 
 import './styles/Main.css'
 
@@ -12,6 +12,6 @@ function App() {
       <Footer />
     </>
   );
-}
+};
 
-export default App;
+export default App

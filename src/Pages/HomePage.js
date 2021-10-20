@@ -1,16 +1,25 @@
 import React from 'react';
-import { FeaturedBannersSlider } from '../Components/HomePage/FeaturedBannersSlider';
-import { FeaturedProductsGrid } from '../Components/HomePage/FeaturedProductsGrid';
-import { ProductCategoriesCarousel } from '../Components/HomePage/ProductCategoriesCarousel';
+import styled from 'styled-components';
+
+import FeaturedBannersSlider from '../Components/HomePage/FeaturedBannersSlider';
+import FeaturedProductsGrid from '../Components/HomePage/FeaturedProductsGrid';
+import ProductCategoriesCarousel from '../Components/HomePage/ProductCategoriesCarousel';
+
+const HomePageContainer = styled.section`
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
 
 const HomePage = ()=>{
     return(
-        <section>
+        <HomePageContainer>
             <FeaturedBannersSlider />
             <ProductCategoriesCarousel/>
             <FeaturedProductsGrid />
-        </section>
-    )
-}
+        </HomePageContainer>
+    );
+};
 
-export { HomePage }
+export default HomePage

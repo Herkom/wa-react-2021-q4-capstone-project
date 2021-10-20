@@ -31,14 +31,14 @@ const SVG = styled.div`
     &:focus {
         outline: 0;
     }
-`
+`;
 
 const Arrow = ({direction, handleClick}) => {
     return(
         <SVG direction={direction} onClick={handleClick} >
             {direction === 'right' ? <img alt={`${rightArrow}`} src={rightArrow} /> : <img alt={`${leftArrow}`} src={leftArrow} />}
         </SVG>
-    )
-}
+    );
+};
 
-export { Arrow }
+export default Arrow

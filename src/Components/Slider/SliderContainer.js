@@ -7,14 +7,14 @@ const Container = styled.ul`
     height: 100%;
     width: ${props => props.width}px;
     display: flex;
-`
+`;
 
 const SliderContainer = (props) => {
     return (
         <Container width={props.width} translate={props.translate} transition={props.transition}>
             {props.children}
         </Container>
-    )
-}
+    );
+};
 
-export { SliderContainer }
+export default SliderContainer
