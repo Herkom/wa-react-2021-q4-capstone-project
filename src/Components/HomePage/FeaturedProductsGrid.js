@@ -36,6 +36,7 @@ const FeaturedProductsGrid = () => {
         setIsLoading(true);
         
         setFetchedData(ProductsMock.results);
+        setError(null);
         setIsLoading(false);
     },[]);
     

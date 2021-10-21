@@ -18,7 +18,7 @@ const Container = styled.section`
 `;
 
 const FeaturedBannersSlider = () => {
-    const [FetchedData, setFetchedData] = React.useState(null);
+    const [fetchedData, setFetchedData] = React.useState(null);
     const [error, setError] = React.useState(null);
     const [isLoading, setIsLoading] = React.useState(false);
 
@@ -36,24 +36,27 @@ const FeaturedBannersSlider = () => {
         setIsLoading(true);
         
         setFetchedData(BannersMock.results);
+        setError(null);
         setIsLoading(false);
     },[]);
     
-    return(
-        <>
-            {   
-                isLoading ? 
-                    ('Here should be a skeleton')
-                : error ?
-                    ('Here should be an apologize and a refresh page button')
-                : FetchedData ?
-                    <Container>
-                        <Slider {...FetchedData} />
-                    </Container>
-                : null 
-            }
-        </>
-    );
+    
+    if ( isLoading ){
+        return ('Here should be a skeleton')
+    }
+    else if( error ){
+        return ('Here should be an apologize and a refresh page button')
+    }
+    else if( fetchedData.lenght > 0 ){
+        return(
+            <Container>
+                <Slider {...fetchedData} />
+            </Container>
+        )
+    }
+    else{
+        return null
+    }
 };
 
 export default FeaturedBannersSlider

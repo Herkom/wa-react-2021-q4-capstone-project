@@ -11,18 +11,25 @@ const DotContainer = styled.div`
 `;
 
 const Dot = styled.span`
-    padding: 10px;
-    margin-right: 5px;
+    padding: 5px;
+    margin-right: 15px;
     cursor: pointer;
     border-radius: 50%;
     background: ${props => props.active ? 'black' : 'white'};
 `;
 
-const Dots = ({ slides, activeSlide }) => {
+const Dots = ({ slides, currentSlide, setter }) => {
+
+  const handleClick = (i) =>{
+    setter({
+      activeSlide: i
+    })
+  }
+
   return (
     <DotContainer>
       {slides.map((slide, i) => (
-        <Dot key={i} active={activeSlide === i} />
+        <Dot key={i} active={currentSlide === i} onClick={handleClick(i)} />
       ))}
     </DotContainer>
   );

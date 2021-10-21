@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import APIcall from '../../utils/APIcall';
-import APICallHandler from 'utils/APICallHandler';
+//import APIcall from '../../utils/APIcall';
+//import APICallHandler from 'utils/APICallHandler';
 import CategoriesElement from './CategoriesElement';
 
 import CategoriesMock from 'mocks/en-us/product-categories.json';
@@ -41,6 +41,7 @@ const ProductCategoriesCarousel = () => {
         setIsLoading(true);
         
         setFetchedData(CategoriesMock.results);
+        setError(null);
         setIsLoading(false);
     },[]);
     
