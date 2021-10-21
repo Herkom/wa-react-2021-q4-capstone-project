@@ -9,9 +9,9 @@ const getWidth = () => window.innerWidth;
 /**
  * @function Slider
  */
-const Slider = props => {
-
-	const slides = Object.values(props);
+const Slider = (props) => {
+	
+	const slides = props.items.map(i => i);
 	const totalNumberOfSlides = slides.length - 1;
 
 	const [state, setState] = useState({

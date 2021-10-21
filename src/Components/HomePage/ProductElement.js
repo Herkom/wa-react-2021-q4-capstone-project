@@ -27,20 +27,13 @@ const ProductElement = ({...props}) => {
     const {
         name,
         sku,
-        mainimage:{
-            url,
-            alt
-        },
-        /* short_description,
-        specs,
-        images,
-        stock, */
+        mainimage,
         price
     } = props.data;
 
     return(
         <Article>
-            <img alt={alt} src={url}/>
+            <img alt={mainimage.alt} src={mainimage.url}/>
             <Name>{name}</Name>
             <SKU>SKU: {sku}</SKU>
             <p>$ {price}</p>

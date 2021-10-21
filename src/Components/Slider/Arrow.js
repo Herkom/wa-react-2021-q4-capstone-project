@@ -1,5 +1,5 @@
 import React from 'react';
-import { SVG } from './styled'
+import { SVG } from './styled';
 
 import rightArrow from 'assets/svgs/right-arrow.svg' ;
 import leftArrow from 'assets/svgs/left-arrow.svg';

@@ -1,23 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
+import { HomePageContainer } from 'Components/HomePage/styled';
 
-import FeaturedBannersSlider from '../Components/HomePage/FeaturedBannersSlider';
-import FeaturedProductsGrid from '../Components/HomePage/FeaturedProductsGrid';
-import ProductCategoriesCarousel from '../Components/HomePage/ProductCategoriesCarousel';
+import ElementsContainer from 'Components/HomePage/ElementsContainer';
 
-const HomePageContainer = styled.section`
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-`;
+import BannersMock from 'mocks/en-us/featured-banners.json';
+import ProductsMock from 'mocks/en-us/featured-products.json';
+import CategoriesMock from 'mocks/en-us/product-categories.json';
 
 const HomePage = ()=>{
     return(
         <HomePageContainer>
-            <FeaturedBannersSlider />
-            <ProductCategoriesCarousel/>
-            <FeaturedProductsGrid />
+            <ElementsContainer type={'Banner'} source={BannersMock}/>
+            <ElementsContainer type={'Categories'} source={CategoriesMock}/>
+            <ElementsContainer type={'Products'} source={ProductsMock}/>
         </HomePageContainer>
     );
 };
