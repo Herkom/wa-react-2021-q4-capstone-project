@@ -1,17 +1,25 @@
 {
   "files": {
-    "main.css": "/wa-react-2021-q4-capstone-project/static/css/main.ffd936ef.chunk.css",
-    "main.js": "/wa-react-2021-q4-capstone-project/static/js/main.74ffa96b.chunk.js",
-    "main.js.map": "/wa-react-2021-q4-capstone-project/static/js/main.74ffa96b.chunk.js.map",
-    "runtime-main.js": "/wa-react-2021-q4-capstone-project/static/js/runtime-main.4242d90e.js",
-    "runtime-main.js.map": "/wa-react-2021-q4-capstone-project/static/js/runtime-main.4242d90e.js.map",
-    "static/js/2.330c5bb6.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/2.330c5bb6.chunk.js",
-    "static/js/2.330c5bb6.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/2.330c5bb6.chunk.js.map",
-    "static/js/3.6f46fa1d.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/3.6f46fa1d.chunk.js",
-    "static/js/3.6f46fa1d.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/3.6f46fa1d.chunk.js.map",
+    "main.css": "/wa-react-2021-q4-capstone-project/static/css/main.de4363f8.chunk.css",
+    "main.js": "/wa-react-2021-q4-capstone-project/static/js/main.eda03a4d.chunk.js",
+    "main.js.map": "/wa-react-2021-q4-capstone-project/static/js/main.eda03a4d.chunk.js.map",
+    "runtime-main.js": "/wa-react-2021-q4-capstone-project/static/js/runtime-main.f435be45.js",
+    "runtime-main.js.map": "/wa-react-2021-q4-capstone-project/static/js/runtime-main.f435be45.js.map",
+    "static/js/2.11941f87.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/2.11941f87.chunk.js",
+    "static/js/2.11941f87.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/2.11941f87.chunk.js.map",
+    "static/js/3.247c8831.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/3.247c8831.chunk.js",
+    "static/js/3.247c8831.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/3.247c8831.chunk.js.map",
+    "static/js/4.8c7aeeaa.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/4.8c7aeeaa.chunk.js",
+    "static/js/4.8c7aeeaa.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/4.8c7aeeaa.chunk.js.map",
+    "static/js/5.e0d90bb8.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/5.e0d90bb8.chunk.js",
+    "static/js/5.e0d90bb8.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/5.e0d90bb8.chunk.js.map",
+    "static/js/6.d37ca3ab.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/6.d37ca3ab.chunk.js",
+    "static/js/6.d37ca3ab.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/6.d37ca3ab.chunk.js.map",
+    "static/js/7.5e2e6f8e.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/7.5e2e6f8e.chunk.js",
+    "static/js/7.5e2e6f8e.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/7.5e2e6f8e.chunk.js.map",
     "index.html": "/wa-react-2021-q4-capstone-project/index.html",
-    "static/css/main.ffd936ef.chunk.css.map": "/wa-react-2021-q4-capstone-project/static/css/main.ffd936ef.chunk.css.map",
-    "static/js/2.330c5bb6.chunk.js.LICENSE.txt": "/wa-react-2021-q4-capstone-project/static/js/2.330c5bb6.chunk.js.LICENSE.txt",
+    "static/css/main.de4363f8.chunk.css.map": "/wa-react-2021-q4-capstone-project/static/css/main.de4363f8.chunk.css.map",
+    "static/js/2.11941f87.chunk.js.LICENSE.txt": "/wa-react-2021-q4-capstone-project/static/js/2.11941f87.chunk.js.LICENSE.txt",
     "static/media/cart.cc64f714.svg": "/wa-react-2021-q4-capstone-project/static/media/cart.cc64f714.svg",
     "static/media/left-arrow.edda4bc7.svg": "/wa-react-2021-q4-capstone-project/static/media/left-arrow.edda4bc7.svg",
     "static/media/logo.b3453288.svg": "/wa-react-2021-q4-capstone-project/static/media/logo.b3453288.svg",
@@ -19,9 +27,9 @@
     "static/media/search.7f48dc58.svg": "/wa-react-2021-q4-capstone-project/static/media/search.7f48dc58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.4242d90e.js",
-    "static/js/2.330c5bb6.chunk.js",
-    "static/css/main.ffd936ef.chunk.css",
-    "static/js/main.74ffa96b.chunk.js"
+    "static/js/runtime-main.f435be45.js",
+    "static/js/2.11941f87.chunk.js",
+    "static/css/main.de4363f8.chunk.css",
+    "static/js/main.eda03a4d.chunk.js"
   ]
 }
