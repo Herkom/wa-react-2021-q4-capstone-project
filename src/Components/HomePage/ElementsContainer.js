@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 
-import { BannerContainer, CategoriesContainer, ProductContainer } from './styled';
+import { BannerContainer, CategoriesContainer, ProductContainer, SectionHeader } from './styled';
 
 const Slider = React.lazy(() => import('../Slider/Slider'));
 const ProductElement = React.lazy(() => import('./ProductElement'));
@@ -45,13 +45,14 @@ const ElementsContainer = (props) => {
             case 'Categories' :
                 return(
                     <Suspense fallback={<div>Loading...</div>}>
-                    <CategoriesContainer>
-                        {fetchedData.map( (item, index) => (
-                            <li key={item.id} id={item.id}>
-                                <CategoriesElement index={index}  {...item} />
-                            </li>
-                        ))}
-                    </CategoriesContainer>
+                        <SectionHeader>Categories</SectionHeader>
+                        <CategoriesContainer>    
+                            {fetchedData.map( (item, index) => (
+                                <li key={item.id} id={item.id}>
+                                    <CategoriesElement index={index}  {...item} />
+                                </li>
+                            ))}
+                        </CategoriesContainer>
                     </Suspense>
                 )
 
@@ -59,6 +60,7 @@ const ElementsContainer = (props) => {
                 return(
                     <>
                         <Suspense fallback={<div>Loading...</div>}>
+                            <SectionHeader>Products</SectionHeader>
                             <ProductContainer>
                                 {fetchedData.map(item => (
                                     <li key={item.id} id={item.id}>
@@ -66,7 +68,7 @@ const ElementsContainer = (props) => {
                                     </li>
                                 ))}
                             </ProductContainer>
-                            <Button>
+                            <Button goTo="/Products">
                                 View all products
                             </Button>
                         </Suspense>

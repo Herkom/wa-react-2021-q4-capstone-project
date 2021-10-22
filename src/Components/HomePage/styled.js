@@ -39,3 +39,11 @@ export const CategoriesContainer = styled.ul`
         margin: 0.5rem;
     }
 `;
+
+export const SectionHeader = styled.h4`
+    font-family: 'Mulish',sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin: 1rem 0 0.7rem 10vw;
+    align-self: start;
+`

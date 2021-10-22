@@ -21,8 +21,12 @@ const ButtonStyles = styled.button`
 `;
 
 const Button = (props) => {
+
+    const goToProductlist = () =>
+        window.location = props.goTo;
+
     return(
-        <ButtonStyles>
+        <ButtonStyles onClick={goToProductlist}>
             {props.children}
         </ButtonStyles>
     );
