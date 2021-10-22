@@ -14,7 +14,8 @@ function App() {
 
   const routes = {
     '/Products': <ProductList />,
-    '/':<HomePage />,
+    '/': <HomePage />,
+    '/wa-react-2021-q4-capstone-project': <HomePage />,
   };
 
   const route = getPathname();
