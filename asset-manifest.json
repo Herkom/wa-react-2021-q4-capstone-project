@@ -3,12 +3,12 @@
     "main.css": "/wa-react-2021-q4-capstone-project/static/css/main.dd09d7a2.chunk.css",
     "main.js": "/wa-react-2021-q4-capstone-project/static/js/main.82089701.chunk.js",
     "main.js.map": "/wa-react-2021-q4-capstone-project/static/js/main.82089701.chunk.js.map",
-    "runtime-main.js": "/wa-react-2021-q4-capstone-project/static/js/runtime-main.b5294c0f.js",
-    "runtime-main.js.map": "/wa-react-2021-q4-capstone-project/static/js/runtime-main.b5294c0f.js.map",
+    "runtime-main.js": "/wa-react-2021-q4-capstone-project/static/js/runtime-main.851e208d.js",
+    "runtime-main.js.map": "/wa-react-2021-q4-capstone-project/static/js/runtime-main.851e208d.js.map",
     "static/js/2.11941f87.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/2.11941f87.chunk.js",
     "static/js/2.11941f87.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/2.11941f87.chunk.js.map",
-    "static/js/3.a131d4af.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/3.a131d4af.chunk.js",
-    "static/js/3.a131d4af.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/3.a131d4af.chunk.js.map",
+    "static/js/3.7ba708cc.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/3.7ba708cc.chunk.js",
+    "static/js/3.7ba708cc.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/3.7ba708cc.chunk.js.map",
     "static/js/4.8c7aeeaa.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/4.8c7aeeaa.chunk.js",
     "static/js/4.8c7aeeaa.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/4.8c7aeeaa.chunk.js.map",
     "static/js/5.e0d90bb8.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/5.e0d90bb8.chunk.js",
@@ -28,7 +28,7 @@
     "static/media/wizelineAcademyLogo.27858443.svg": "/wa-react-2021-q4-capstone-project/static/media/wizelineAcademyLogo.27858443.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b5294c0f.js",
+    "static/js/runtime-main.851e208d.js",
     "static/js/2.11941f87.chunk.js",
     "static/css/main.dd09d7a2.chunk.css",
     "static/js/main.82089701.chunk.js"
