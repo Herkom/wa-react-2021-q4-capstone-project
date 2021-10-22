@@ -44,7 +44,7 @@ const LogoContainer = styled.a`
 const Header = () =>{
 
     const goToHome = () =>
-        window.location.pathname = "/"
+        window.location.pathname = "/wa-react-2021-q4-capstone-project/"
 
     return (
         <HeaderStyles>

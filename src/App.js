@@ -13,9 +13,8 @@ import './styles/App.css'
 function App() {
 
   const routes = {
-    '/Products': <ProductList />,
-    '/': <HomePage />,
-    '/wa-react-2021-q4-capstone-project': <HomePage />,
+    '/wa-react-2021-q4-capstone-project/Products/': <ProductList />,
+    '/wa-react-2021-q4-capstone-project/': <HomePage />,
   };
 
   const route = getPathname();
