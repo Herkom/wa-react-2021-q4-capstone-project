@@ -1,7 +1,8 @@
+import { navigate } from 'hookrouter';
 import React from 'react';
 import styled from 'styled-components';
 
-const ButtonStyles = styled.button`
+const ButtonStyles = styled.a`
     padding: 1rem 1.5rem;
     font-size: 1.5rem;
     background-color: black;
@@ -23,7 +24,7 @@ const ButtonStyles = styled.button`
 const Button = (props) => {
 
     const goToProductlist = () =>
-        window.location = props.goTo;
+        navigate(props.goTo)
 
     return(
         <ButtonStyles onClick={goToProductlist}>

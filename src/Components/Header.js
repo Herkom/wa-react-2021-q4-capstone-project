@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigate } from 'hookrouter';
 import styled from 'styled-components';
 
 import logo from 'assets/svgs/logo.svg';
@@ -44,7 +45,7 @@ const LogoContainer = styled.a`
 const Header = () =>{
 
     const goToHome = () =>
-        window.location.pathname = "/wa-react-2021-q4-capstone-project/"
+        navigate("/wa-react-2021-q4-capstone-project/")
 
     return (
         <HeaderStyles>

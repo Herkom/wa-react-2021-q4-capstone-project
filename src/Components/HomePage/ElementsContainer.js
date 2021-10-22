@@ -68,7 +68,7 @@ const ElementsContainer = (props) => {
                                     </li>
                                 ))}
                             </ProductContainer>
-                            <Button goTo="/wa-react-2021-q4-capstone-project/Products/">
+                            <Button goTo="/wa-react-2021-q4-capstone-project/products">
                                 View all products
                             </Button>
                         </Suspense>

@@ -1,4 +1,5 @@
 import React from 'react';
+import {useRoutes} from 'hookrouter';
 
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -6,24 +7,24 @@ import Content from './Components/Content';
 import HomePage from 'Pages/HomePage';
 import ProductList from 'Pages/ProductList';
 
-import getPathname from 'utils/getPathname';
+//import getPathname from 'utils/getPathname';
 
 import './styles/App.css'
 
 function App() {
 
   const routes = {
-    '/wa-react-2021-q4-capstone-project/Products/': <ProductList />,
-    '/wa-react-2021-q4-capstone-project/': <HomePage />,
+    '/wa-react-2021-q4-capstone-project/': () => <HomePage />,
+    '/wa-react-2021-q4-capstone-project/products': () => <ProductList />,
   };
 
-  const route = getPathname();
+  const routeResult = useRoutes(routes);
 
   return (
     <>
       <Header />
       <Content>
-        { routes[route] ? routes[route] : <p>Nah Nah Nah</p>}
+        { routeResult }
       </Content>
       <Footer />
     </>
