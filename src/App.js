@@ -14,8 +14,9 @@ import './styles/App.css'
 function App() {
 
   const routes = {
+    '/wa-react-2021-q4-capstone-project': () => <HomePage />,
     '/wa-react-2021-q4-capstone-project/': () => <HomePage />,
-    '/wa-react-2021-q4-capstone-project/products': () => <ProductList />,
+    '/wa-react-2021-q4-capstone-project/products': () => <ProductList />
   };
 
   const routeResult = useRoutes(routes);
