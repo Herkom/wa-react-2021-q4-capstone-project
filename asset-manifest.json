@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/wa-react-2021-q4-capstone-project/static/css/main.dd09d7a2.chunk.css",
-    "main.js": "/wa-react-2021-q4-capstone-project/static/js/main.210486a1.chunk.js",
-    "main.js.map": "/wa-react-2021-q4-capstone-project/static/js/main.210486a1.chunk.js.map",
-    "runtime-main.js": "/wa-react-2021-q4-capstone-project/static/js/runtime-main.210c2d89.js",
-    "runtime-main.js.map": "/wa-react-2021-q4-capstone-project/static/js/runtime-main.210c2d89.js.map",
+    "main.js": "/wa-react-2021-q4-capstone-project/static/js/main.64705437.chunk.js",
+    "main.js.map": "/wa-react-2021-q4-capstone-project/static/js/main.64705437.chunk.js.map",
+    "runtime-main.js": "/wa-react-2021-q4-capstone-project/static/js/runtime-main.13892b56.js",
+    "runtime-main.js.map": "/wa-react-2021-q4-capstone-project/static/js/runtime-main.13892b56.js.map",
     "static/js/2.92b86c87.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/2.92b86c87.chunk.js",
     "static/js/2.92b86c87.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/2.92b86c87.chunk.js.map",
-    "static/js/3.48e120c5.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/3.48e120c5.chunk.js",
-    "static/js/3.48e120c5.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/3.48e120c5.chunk.js.map",
+    "static/js/3.6b4ce929.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/3.6b4ce929.chunk.js",
+    "static/js/3.6b4ce929.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/3.6b4ce929.chunk.js.map",
     "static/js/4.161ad0ee.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/4.161ad0ee.chunk.js",
     "static/js/4.161ad0ee.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/4.161ad0ee.chunk.js.map",
     "static/js/5.13b7d686.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/5.13b7d686.chunk.js",
@@ -28,9 +28,9 @@
     "static/media/wizelineAcademyLogo.27858443.svg": "/wa-react-2021-q4-capstone-project/static/media/wizelineAcademyLogo.27858443.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.210c2d89.js",
+    "static/js/runtime-main.13892b56.js",
     "static/js/2.92b86c87.chunk.js",
     "static/css/main.dd09d7a2.chunk.css",
-    "static/js/main.210486a1.chunk.js"
+    "static/js/main.64705437.chunk.js"
   ]
 }
