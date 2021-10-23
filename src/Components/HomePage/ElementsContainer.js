@@ -64,7 +64,7 @@ const ElementsContainer = (props) => {
                             <ProductContainer>
                                 {fetchedData.map(item => (
                                     <li key={item.id} id={item.id}>
-                                        <ProductElement {...item} />
+                                        <ProductElement showCategory={false} {...item} />
                                     </li>
                                 ))}
                             </ProductContainer>

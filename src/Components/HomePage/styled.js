@@ -24,6 +24,10 @@ export const BannerContainer = styled.section`
     flex-direction: row;
     overflow: hidden;
     margin-bottom: 3rem;
+    
+    @media(max-width:600px){
+        height: 70vh;
+    }
 `;
 
 export const CategoriesContainer = styled.ul`

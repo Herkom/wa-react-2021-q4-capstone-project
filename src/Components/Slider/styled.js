@@ -31,9 +31,15 @@ export const SVG = styled.div`
 
     img {
         transform: translateX(${props => props.direction === 'left' ? '-2' : '2'}px);
-
+    }
     &:focus {
         outline: 0;
+    }
+
+    @media(max-width: 600px){
+        top: calc( 50% - 30px );
+        height: 50px;
+        width: 50px;
     }
 `;
 
@@ -50,17 +56,31 @@ export const InfoContainer = styled.div`
     display: flex;
     flex-direction: column;
     position: absolute;
-    bottom 25%;
+    bottom: 25%;
     left: 10%;
+
+    @media(max-width:600px){
+        left: 0%;
+        bottom: 70px;
+        width: 100%;
+        background-color: white;
+    }
 `;
 export const Header = styled.h2`
     font-family: 'DM Serif Display', serif;
     text-transform: capitalize;
-    font-size: 47px;
+    font-size: 3rem;
     line-height: 49px;
     padding: 2rem;
     padding-bottom:1rem;
     background: white;
+
+    @media(max-width:600px){
+        font-size: 2rem;
+        line-height: 30px;
+        padding: 1.3rem 2rem 0.5rem;
+        white-space: normal;
+    }
 `;
 export const Description = styled.p`
     font-family: 'Mulish', sans-serif;
@@ -68,6 +88,10 @@ export const Description = styled.p`
     font-weight: 500;
     padding: 0 2rem 2rem 2rem;
     background: white;
+
+    @media(max-width:600px){
+        padding-bottom: 1.3rem;
+    }
 `;
 
 export const SliderCSS = styled.div`
@@ -92,4 +116,9 @@ export const Dot = styled.span`
     cursor: pointer;
     border-radius: 50%;
     background: ${props => props.active ? 'black' : 'white'};
+
+    @media (max-width: 600px){
+        padding: 10px;
+        margin: 0 10px;
+    }
 `;

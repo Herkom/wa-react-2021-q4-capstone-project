@@ -16,6 +16,17 @@ const FooterElement = styled.footer`
         height: 30px;
         margin: 0 1rem;
     }
+
+    @media (max-width: 600px){
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.8rem;
+        padding: 1rem 0;
+
+        img{
+            margin: 0.5rem 0;
+        }
+    }
 `;
 
 const Footer = () => {

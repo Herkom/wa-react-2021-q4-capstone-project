@@ -11,6 +11,10 @@ const HeaderStyles = styled.header`
     justify-content: space-around;
     align-items: center;
     padding: 1rem 0;
+
+    @media (max-width: 600px){
+        flex-direction: column;
+    }
 `;
 const Cart = styled.img`
     width: 30px;
@@ -25,6 +29,17 @@ const SearchInput = styled.input`
     border: 2px lightgray solid;
     border-radius: 15px;
     height: 20px;
+
+    @media (max-width: 600px){
+        background-position-x: 15px;
+        background-position-y: 8px;
+        border-radius: 30px;
+        height: 30px;
+        padding: 0;
+        width: 80%;
+        margin: 1rem 0;
+
+    }
 `;
 const LogoContainer = styled.a`
     text-decoration: none;
@@ -39,6 +54,12 @@ const LogoContainer = styled.a`
     }
     h1{
         margin-left: 1rem;
+    }
+
+    @media (max-width: 600px){
+        h1{
+            display: none;
+        }
     }
 `;
 
