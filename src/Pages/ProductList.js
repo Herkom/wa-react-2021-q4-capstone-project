@@ -1,91 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import styled from 'styled-components';
+import { H1Header, ProductContainer, ProductListSection, CategoriesContainer,  } from 'Components/ProductList/styled';
 import ProductElement from 'Components/HomePage/ProductElement';
+import Paginator from 'Components/ProductList/Paginator';
 
 import ProductsMock from 'mocks/en-us/featured-products.json';
 import CategoriesMock from '../mocks/en-us/product-categories.json';
-
-const H1Header = styled.h1`
-    font-size: 2rem;
-    text-align: center;
-    margin: 2rem 0;
-`;
-const ProductContainer = styled.ul`
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, 15rem);
-    justify-content: center;
-    margin: 0 auto;
-    width: calc( 100% - 20vw );
-
-    @media(max-width:600px){
-        grid-template-columns: repeat(auto-fit, 25rem);
-        width: calc( 90% );
-
-        li{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    }
-`;
-const ProductListSection = styled.section`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    
-    @media (max-width: 600px) {
-        flex-direction: column;
-        align-items: center;
-    }
-
-`;
-
-const CategoriesContainer = styled.aside`
-    margin: 2rem 0 2rem 3rem;
-    padding: 1rem;
-    border: 1px solid grey;
-    font-size: 1.5rem;
-
-    @media(max-width: 600px){
-        font-size: 1.5rem;
-        border: none;
-        margin: 2rem;
-        padding: 0;
-    }
-
-    ul{
-        font: 400 0.8rem/1.5rem 'Mulish',sans-serif;
-        margin-left: 0.5rem;
-        margin-top: 0.5rem;
-
-        @media(max-width: 600px){
-            font-size: 1rem;
-            margin-left: 1rem;
-        }
-    }
-
-    label{
-        display: flex;
-        align-items: center;
-
-        @media(max-width: 600px){
-            margin: 1rem 0;
-        }
-    }
-
-    input[type='checkbox']{
-        height: 20px;
-        width: 20px;
-        margin-right: 0.5rem;
-
-        @media(max-width: 600px){
-            height: 25px;
-            width: 25px;
-        }
-    }
-`;
 
 const Categories = CategoriesMock.results;
 const allProducts = ProductsMock.results;
@@ -117,7 +36,7 @@ const ProductList = () => {
         });
     }
 
-    const handleInputChange = (event) =>{
+    const handleCheckboxChange = (event) =>{
         const arrayOfchosedCategories = chosedCategories.items;
 
         const isItOnTheArray = arrayOfchosedCategories.some(
@@ -151,12 +70,12 @@ const ProductList = () => {
             <H1Header>This is the Product List Page</H1Header>
             <ProductListSection>
                 <CategoriesContainer>
-                    Categories
+                    <h2>Categories</h2>
                     <ul>
                         {Categories.map(item => (
                             <li key={item.id}>
                                 <label>
-                                    <input name={item.data.name} type='checkbox' onChange={handleInputChange}/>
+                                    <input name={item.data.name} type='checkbox' onChange={handleCheckboxChange}/>
                                     {item.data.name}
                                 </label>
                             </li>
@@ -172,6 +91,7 @@ const ProductList = () => {
                         )
                     })}
                 </ProductContainer>
+                <Paginator numberOfProducts={filteredProducts.products.length} numberItemsInGroup={5}/>
             </ProductListSection>
         </>
     )

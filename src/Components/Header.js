@@ -21,7 +21,9 @@ const Cart = styled.img`
     height: 30px;
     background-size: contain;
     background-repeat: no-repeat;
+    cursor: pointer;
 `;
+
 const SearchInput = styled.input`
     background: url(${searchIcon}) no-repeat scroll 10px 4px;
     padding-left:30px;
@@ -48,6 +50,7 @@ const LogoContainer = styled.a`
     color: black;
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     img {
         width: 60px; 
