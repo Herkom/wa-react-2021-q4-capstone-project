@@ -12,7 +12,6 @@ const Article = styled.article`
     @media(max-width: 600px){
         border: 1px solid #d0caca;
         padding: 1rem;
-        width: 25rem;
     }
 `;
 const Name = styled.h4`
