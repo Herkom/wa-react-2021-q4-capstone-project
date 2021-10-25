@@ -34,9 +34,7 @@ export const ProductListSection = styled.section`
         flex-direction: column;
         align-items: center;
     }
-
 `;
-
 export const CategoriesContainer = styled.aside`
     margin: 2rem 0 2rem 3rem;
     padding: 1rem;
@@ -124,4 +122,55 @@ export const PaginatorContainer = styled.div`
             margin: 0 0.3rem;
         }
     }
+`;
+
+export const SkeletonContainer = styled.div`
+    width: 15rem;
+    height: 23rem;
+    border-radius: 15px;
+    border: 1px rgba(0, 0, 0, 0.2) solid;
+    
+    display: flex;
+    flex-direction: column;
+
+    @media(max-width: 600px){
+        margin: 0 auto;
+    }
+`;
+export const SkeletonAnimation = styled.div`
+    background: rgba(0, 0, 0, 0.11);
+    animation: skeletonAnimation 1s ease-in-out infinite;
+
+    @keyframes skeletonAnimation {
+        0% {
+            opacity:1;
+        }
+        50% {
+            opacity:0.4;
+        }
+        100% {
+            opacity:1;
+        }
+    }
+
+`;
+export const SkeletonText = styled(SkeletonAnimation)`
+    height: 1rem;
+    margin: 1rem auto;
+`;
+export const SkeletonImg = styled(SkeletonAnimation)`
+    margin: 1rem;
+    height: 10rem;
+`;
+export const SkeletonCategory = styled(SkeletonText)`
+    width: 50%;
+`;
+export const SkeletonName = styled(SkeletonText)`
+    width: 90%;
+`;
+export const SkeletonSKU = styled(SkeletonText)`
+    width: 30%;
+`;
+export const SkeletonPrice = styled(SkeletonText)`
+    width: 25%;
 `;

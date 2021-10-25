@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import { H1Header, ProductContainer, ProductListSection, CategoriesContainer,  } from 'Components/ProductList/styled';
 import ProductElement from 'Components/HomePage/ProductElement';
+import ProductSkeleton from 'Components/ProductList/ProductSkeleton';
 import Paginator from 'Components/ProductList/Paginator';
 
-import ProductsMock from 'mocks/en-us/featured-products.json';
+import ProductsMock from 'mocks/en-us/products.json';
 import CategoriesMock from '../mocks/en-us/product-categories.json';
 
 const Categories = CategoriesMock.results;
@@ -13,6 +14,7 @@ const ProductList = () => {
 
     const [ chosedCategories, setChosedCategories ] = useState({ items: [] });
     const [ filteredProducts, setFilteredProducts ] = useState({ products: [] });
+    const [ hasTimePassed, setHasTimePassed ] = useState(false);
 
     const filter = () =>         
         allProducts.filter( (item) => 
@@ -62,7 +64,15 @@ const ProductList = () => {
         if(filteredProducts.products.length === 0)
             setFilteredProducts({ products: allProducts });
 
-    }, [filteredProducts])
+    }, [filteredProducts]);
+
+
+    useEffect(() => {
+        setTimeout(() => {
+            setHasTimePassed(true);
+        }, 2000);
+    }, [])
+
 
 
     return(
@@ -83,13 +93,21 @@ const ProductList = () => {
                     </ul>
                 </CategoriesContainer>
                 <ProductContainer>
-                    {filteredProducts.products.map(item => {
-                        return(
-                        <li key={item.id}>
-                            <ProductElement showCategory={true} {...item} />
-                        </li>
-                        )
-                    })}
+                    {  
+                        hasTimePassed ?
+                            filteredProducts.products.map(item => {
+                                return(
+                                <li key={item.id}>
+                                    <ProductElement showCategory={true} {...item} />
+                                </li>
+                                )
+                            })
+                        : filteredProducts.products.map(item => {
+                            return(
+                                <ProductSkeleton key={item.id}/>
+                            )
+                        })
+                    }
                 </ProductContainer>
                 <Paginator numberOfProducts={filteredProducts.products.length} numberItemsInGroup={5}/>
             </ProductListSection>

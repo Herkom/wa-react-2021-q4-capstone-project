@@ -13,7 +13,6 @@ const Paginator = ( props ) => {
         const pages = Math.ceil(products / items);
         
         for(let i = 1; i <= pages; i++){
-            console.log(i);
             pagesArray.push(i);
         };
 
