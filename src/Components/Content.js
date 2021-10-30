@@ -1,15 +1,12 @@
-import React from 'react'
-
-import { HomePage } from '../Pages/HomePage';
-
+import React from 'react';
 
 //Probably this is where the router will be
 const Content = (props) => {
     return(
         <main>
-            <HomePage />
+            {props.children}
         </main>
     );
-}
+};
 
-export { Content }
+export default Content

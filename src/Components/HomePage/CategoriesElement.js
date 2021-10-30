@@ -14,7 +14,7 @@ const Article = styled.article`
     &:hover h3 a{
         color: #e4986a;
     }
-`
+`;
 
 const ImageLink = styled.a`
     position: relative;
@@ -38,7 +38,7 @@ const ImageLink = styled.a`
         height: auto;
         transition: all 0.4s ease-in-out;
     }
-`
+`;
 
 const Title = styled.h3`
     position: absolute;
@@ -53,9 +53,9 @@ const Title = styled.h3`
         text-decoration: none;
         letter-spacing: 1px; 
     }
-`
+`;
 
-const CategoriesElement = ({ index, ...props }) => {
+const CategoriesElement = ({ data }) => {
 
     const{
         name,
@@ -67,7 +67,7 @@ const CategoriesElement = ({ index, ...props }) => {
             alt,
             url
         }
-    } = props.data; 
+    } = data; 
 
     return(
         <Article>
@@ -78,7 +78,7 @@ const CategoriesElement = ({ index, ...props }) => {
                 <a href="www.google.com" title={alt}>{name}</a>
             </Title>
         </Article>
-    )
-}
+    );
+};
 
-export { CategoriesElement }
+export default CategoriesElement
