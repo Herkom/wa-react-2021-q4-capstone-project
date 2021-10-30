@@ -7,11 +7,16 @@ import Content from './Components/Content';
 import HomePage from 'Pages/HomePage';
 import ProductList from 'Pages/ProductList';
 
+import { useFeaturedBanners } from './utils/hooks/useFeaturedBanners';
+
+
 //import getPathname from 'utils/getPathname';
 
 import './styles/App.css'
 
 function App() {
+  const { data, isLoading } = useFeaturedBanners();
+  console.log(data, isLoading);
 
   const routes = {
     '/wa-react-2021-q4-capstone-project': () => <HomePage />,
