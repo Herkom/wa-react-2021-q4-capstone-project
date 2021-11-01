@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
-import { API_BASE_URL } from '../constants';
 import { useLatestAPI } from './useLatestAPI';
+import { useURLMaker } from './useURLMaker';
 
-export function useFeaturedBanners() {
+export function useFeaturedBanners( docType = null, pageSize = null, optional = null, optValue = null ) {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
+  
   const [featuredBanners, setFeaturedBanners] = useState(() => ({
     data: {},
     isLoading: true,
   }));
+ 
+  const URL = useURLMaker( apiRef, docType, pageSize, optional, optValue );
 
   useEffect(() => {
     if (!apiRef || isApiMetadataLoading) {
@@ -19,12 +22,9 @@ export function useFeaturedBanners() {
     async function getFeaturedBanners() {
       try {
         setFeaturedBanners({ data: {}, isLoading: true });
-
+        
         const response = await fetch(
-          `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
-            '[[at(document.type, "banner")]]'
-          )}&lang=en-us&pageSize=5`,
-          {
+          URL, {
             signal: controller.signal,
           }
         );
@@ -42,7 +42,7 @@ export function useFeaturedBanners() {
     return () => {
       controller.abort();
     };
-  }, [apiRef, isApiMetadataLoading]);
+  }, [apiRef, isApiMetadataLoading, URL]);
 
   return featuredBanners;
 }

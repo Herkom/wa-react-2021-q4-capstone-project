@@ -96,7 +96,7 @@ export const Description = styled.p`
 
 export const SliderCSS = styled.div`
     position: relative;
-    width: 100vw;
+    width: ${props => props.width}px;
     margin: 0 auto;
     overflow: hidden;
     white-space: nowrap;

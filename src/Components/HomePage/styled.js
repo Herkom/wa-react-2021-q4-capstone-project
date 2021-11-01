@@ -16,8 +16,8 @@ export const ProductContainer = styled.ul`
     width: calc( 100% - 20vw );
 `;
 
-export const BannerContainer = styled.section`
-    width: 100%;
+export const BannerContainer = styled.article`
+    ${props => props.width ? 'width: '+ props.width+'px;': `width: 100%;`}
     height: 90vh;
     display: flex;
     flex-wrap: wrap;

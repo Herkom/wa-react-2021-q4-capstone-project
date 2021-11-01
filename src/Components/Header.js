@@ -1,10 +1,10 @@
 import React from 'react';
-import { navigate } from 'hookrouter';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import logo from 'assets/svgs/logo.svg';
-import searchIcon from 'assets/svgs/search.svg';
 import cartIcon from 'assets/svgs/cart.svg';
+import SearchInput from './SearchInput';
 
 const HeaderStyles = styled.header`
     display: flex;
@@ -15,36 +15,18 @@ const HeaderStyles = styled.header`
     @media (max-width: 600px){
         flex-direction: column;
     }
-`;
-const Cart = styled.img`
-    width: 30px;
-    height: 30px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    cursor: pointer;
-`;
 
-const SearchInput = styled.input`
-    background: url(${searchIcon}) no-repeat scroll 10px 4px;
-    padding-left:30px;
-    background-size: 15px;
-    border: 2px lightgray solid;
-    border-radius: 15px;
-    height: 20px;
+    a{
+        text-decoration: none;
+    }
 
-    @media (max-width: 600px){
-        background-position-x: 15px;
-        background-position-y: 8px;
-        border-radius: 30px;
-        height: 30px;
-        padding: 0;
-        width: 80%;
-        margin: 1rem 0;
-
+    div{
+        display: flex;
+        align-items: center;
     }
 `;
-const LogoContainer = styled.a`
-    text-decoration: none;
+
+const LogoContainer = styled.div`
     text-transform: uppercase;
     font-family: 'Mulish',sans-serif;
     color: black;
@@ -66,22 +48,33 @@ const LogoContainer = styled.a`
     }
 `;
 
+const Cart = styled.img`
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin-left: 1rem;
+`;
+
+
+
 const Header = () =>{
-
-    const goToHome = () =>
-        navigate("/wa-react-2021-q4-capstone-project/")
-
     return (
         <HeaderStyles>
-            <LogoContainer onClick={goToHome}>
-                <img src={logo} alt='logo'/>
-                <h1>Möbelhaus</h1>
-            </LogoContainer>
-            <SearchInput/>
-            <Cart
-                alt="Go to review your cart"
-                src={cartIcon}
-            />
+            <Link to="/">
+                <LogoContainer>
+                    <img src={logo} alt='logo'/>
+                    <h1>Möbelhaus</h1>
+                </LogoContainer>
+            </Link>
+            <div>
+                <SearchInput/>
+                <Cart
+                    alt="Go to review your cart"
+                    src={cartIcon}
+                />
+            </div>
         </HeaderStyles>
     );
 };

@@ -35,7 +35,7 @@ export const ProductListSection = styled.section`
         align-items: center;
     }
 `;
-export const CategoriesContainer = styled.aside`
+export const CategoriesContainer = styled.form`
     margin: 2rem 0 2rem 3rem;
     padding: 1rem;
     border: 1px solid grey;

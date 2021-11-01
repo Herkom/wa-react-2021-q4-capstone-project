@@ -9,9 +9,9 @@ const getWidth = () => window.innerWidth;
 /**
  * @function Slider
  */
-const Slider = (props) => {
+const Slider = ({width = getWidth(), items}) => {
 	
-	const slides = props.items.map(i => i);
+	const slides = items.map(i => i);
 	const totalNumberOfSlides = slides.length - 1;
 
 	const [state, setState] = useState({
@@ -33,7 +33,7 @@ const Slider = (props) => {
 			//If last slide
 			//translate to first slide,
 			//otherwise next slide.
-			translate: activeSlide === totalNumberOfSlides ? 0 : translate + getWidth(),
+			translate: activeSlide === totalNumberOfSlides ? 0 : translate + width,
 			activeSlide: activeSlide === totalNumberOfSlides ? 0 : activeSlide + 1
 		});
 	};
@@ -45,7 +45,7 @@ const Slider = (props) => {
 			//If first slide
 			//translate to last slide,
 			//otherwise previous slide.
-			translate: activeSlide === 0 ? getWidth() * totalNumberOfSlides : translate - getWidth(),
+			translate: activeSlide === 0 ? width * totalNumberOfSlides : translate - width,
 			activeSlide: activeSlide === 0 ? totalNumberOfSlides : activeSlide - 1
 		});
 	};
@@ -55,17 +55,17 @@ const Slider = (props) => {
 
 		setState({
 			...state,
-			translate: getWidth() * slideNumber,
+			translate: width * slideNumber,
 		  	activeSlide: slideNumber
 		})
 	}
 
 	return (
-		<SliderCSS>
+		<SliderCSS width={width}>
 			<SliderContainer
 				translate={translate}
 				transition={transition}
-				width={getWidth() * slides.length}
+				width={width * slides.length}
 				className={'SliderContent'}
 			>
 				{slides.map((_slide, i) => {

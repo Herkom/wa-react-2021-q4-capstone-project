@@ -5,18 +5,18 @@ const Article = styled.article`
     position: relative;
     overflow: hidden;
 
-    &:hover a img{
+    &:hover div img{
         transform: scale(1.1);
     }
-    &:hover a:after{
+    &:hover div:after{
         opacity: 1;
     }
-    &:hover h3 a{
+    &:hover h3{
         color: #e4986a;
     }
 `;
 
-const ImageLink = styled.a`
+const ImageLink = styled.div`
     position: relative;
     overflow: hidden;
     display: block;
@@ -48,11 +48,9 @@ const Title = styled.h3`
     bottom: 0;
     right: 0;
 
-    a{
         color: black;
         text-decoration: none;
-        letter-spacing: 1px; 
-    }
+        letter-spacing: 1px;
 `;
 
 const CategoriesElement = ({ data }) => {
@@ -71,11 +69,11 @@ const CategoriesElement = ({ data }) => {
 
     return(
         <Article>
-            <ImageLink href="www.google.com" title={alt}>
+            <ImageLink>
                 <img alt={alt} src={url}/>
             </ImageLink>
             <Title>
-                <a href="www.google.com" title={alt}>{name}</a>
+                {name}
             </Title>
         </Article>
     );

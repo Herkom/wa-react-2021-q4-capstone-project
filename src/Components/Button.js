@@ -1,8 +1,7 @@
-import { navigate } from 'hookrouter';
 import React from 'react';
 import styled from 'styled-components';
 
-const ButtonStyles = styled.a`
+const ButtonStyles = styled.div`
     padding: 1rem 1.5rem;
     font-size: 1.5rem;
     background-color: black;
@@ -10,7 +9,7 @@ const ButtonStyles = styled.a`
     border: none;
     font: 500 1rem/1.5rem 'Mulish',sans-serif;
     text-align: center;
-    margin: 4rem 0 2rem 0;
+    margin: 2rem 0;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -22,12 +21,8 @@ const ButtonStyles = styled.a`
 `;
 
 const Button = (props) => {
-
-    const goToProductlist = () =>
-        navigate(props.goTo)
-
     return(
-        <ButtonStyles onClick={goToProductlist}>
+        <ButtonStyles>
             {props.children}
         </ButtonStyles>
     );

@@ -16,8 +16,12 @@ export function useLatestAPI() {
         const response = await fetch(API_BASE_URL, {
           signal: controller.signal,
         });
-        const { refs: [{ ref } = {}] = [] } = await response.json();
 
+        //Esta declaración no me quedo muy clara
+        //Se desestructura el objeto para solo tomar el valor de ref
+        //pero no me queda claro como se consiguió
+        const { refs: [{ ref } = {}] = [] } = await response.json();
+        
         setApiMetadata({ ref, isLoading: false });
       } catch (err) {
         setApiMetadata({ ref: null, isLoading: false });
