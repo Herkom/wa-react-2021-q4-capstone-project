@@ -1,34 +1,28 @@
 {
   "files": {
     "main.css": "/wa-react-2021-q4-capstone-project/static/css/main.dd09d7a2.chunk.css",
-    "main.js": "/wa-react-2021-q4-capstone-project/static/js/main.79adcf57.chunk.js",
-    "main.js.map": "/wa-react-2021-q4-capstone-project/static/js/main.79adcf57.chunk.js.map",
-    "runtime-main.js": "/wa-react-2021-q4-capstone-project/static/js/runtime-main.d6444e79.js",
-    "runtime-main.js.map": "/wa-react-2021-q4-capstone-project/static/js/runtime-main.d6444e79.js.map",
-    "static/js/2.83757eba.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/2.83757eba.chunk.js",
-    "static/js/2.83757eba.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/2.83757eba.chunk.js.map",
-    "static/js/3.23ae2e28.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/3.23ae2e28.chunk.js",
-    "static/js/3.23ae2e28.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/3.23ae2e28.chunk.js.map",
-    "static/js/4.89f325b3.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/4.89f325b3.chunk.js",
-    "static/js/4.89f325b3.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/4.89f325b3.chunk.js.map",
-    "static/js/5.d7012bd3.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/5.d7012bd3.chunk.js",
-    "static/js/5.d7012bd3.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/5.d7012bd3.chunk.js.map",
-    "static/js/6.d084a99d.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/6.d084a99d.chunk.js",
-    "static/js/6.d084a99d.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/6.d084a99d.chunk.js.map",
+    "main.js": "/wa-react-2021-q4-capstone-project/static/js/main.f3b0c934.chunk.js",
+    "main.js.map": "/wa-react-2021-q4-capstone-project/static/js/main.f3b0c934.chunk.js.map",
+    "runtime-main.js": "/wa-react-2021-q4-capstone-project/static/js/runtime-main.3b4370b7.js",
+    "runtime-main.js.map": "/wa-react-2021-q4-capstone-project/static/js/runtime-main.3b4370b7.js.map",
+    "static/js/2.4ecf0d17.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/2.4ecf0d17.chunk.js",
+    "static/js/2.4ecf0d17.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/2.4ecf0d17.chunk.js.map",
+    "static/js/3.2547ffdc.chunk.js": "/wa-react-2021-q4-capstone-project/static/js/3.2547ffdc.chunk.js",
+    "static/js/3.2547ffdc.chunk.js.map": "/wa-react-2021-q4-capstone-project/static/js/3.2547ffdc.chunk.js.map",
     "index.html": "/wa-react-2021-q4-capstone-project/index.html",
     "static/css/main.dd09d7a2.chunk.css.map": "/wa-react-2021-q4-capstone-project/static/css/main.dd09d7a2.chunk.css.map",
-    "static/js/2.83757eba.chunk.js.LICENSE.txt": "/wa-react-2021-q4-capstone-project/static/js/2.83757eba.chunk.js.LICENSE.txt",
+    "static/js/2.4ecf0d17.chunk.js.LICENSE.txt": "/wa-react-2021-q4-capstone-project/static/js/2.4ecf0d17.chunk.js.LICENSE.txt",
     "static/media/cart.cc64f714.svg": "/wa-react-2021-q4-capstone-project/static/media/cart.cc64f714.svg",
-    "static/media/left-arrow.svg": "/wa-react-2021-q4-capstone-project/static/media/left-arrow.edda4bc7.svg",
+    "static/media/left-arrow.edda4bc7.svg": "/wa-react-2021-q4-capstone-project/static/media/left-arrow.edda4bc7.svg",
     "static/media/logo.b3453288.svg": "/wa-react-2021-q4-capstone-project/static/media/logo.b3453288.svg",
-    "static/media/right-arrow.svg": "/wa-react-2021-q4-capstone-project/static/media/right-arrow.b035d260.svg",
+    "static/media/right-arrow.b035d260.svg": "/wa-react-2021-q4-capstone-project/static/media/right-arrow.b035d260.svg",
     "static/media/search.7f48dc58.svg": "/wa-react-2021-q4-capstone-project/static/media/search.7f48dc58.svg",
     "static/media/wizelineAcademyLogo.27858443.svg": "/wa-react-2021-q4-capstone-project/static/media/wizelineAcademyLogo.27858443.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d6444e79.js",
-    "static/js/2.83757eba.chunk.js",
+    "static/js/runtime-main.3b4370b7.js",
+    "static/js/2.4ecf0d17.chunk.js",
     "static/css/main.dd09d7a2.chunk.css",
-    "static/js/main.79adcf57.chunk.js"
+    "static/js/main.f3b0c934.chunk.js"
   ]
 }
