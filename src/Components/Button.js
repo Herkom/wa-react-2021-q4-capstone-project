@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const ButtonStyles = styled.div`
     padding: 1rem 1.5rem;
     font-size: 1.5rem;
-    background-color: black;
+    background-color: var(--main-color);
     color: white;
     border: none;
     font: 500 1rem/1.5rem 'Mulish',sans-serif;

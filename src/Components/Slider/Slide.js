@@ -1,9 +1,8 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 import { SlideItem, InfoContainer, Header, Description } from './styled';
 
 const Slide = ({ width, ...props }) => {
-
 
     if(props.data){
         const {
@@ -18,7 +17,13 @@ const Slide = ({ width, ...props }) => {
             <SlideItem width={width} content={main_image.url}>
                 <InfoContainer>
                     <Header>{title.toLowerCase()}</Header>
-                    <Description>{productDescription.length > 30 ? productDescription.slice(0,30): productDescription}</Description>
+                    <Description>
+                        {   
+                            productDescription.length > 30
+                            ? productDescription.slice(0,30)
+                            : productDescription
+                        }
+                    </Description>
                 </InfoContainer>
                 
             </SlideItem>
@@ -31,4 +36,14 @@ const Slide = ({ width, ...props }) => {
 
 };
 
-export default Slide
+Slide.propTypes = {
+    width: PropTypes.number,
+    data: PropTypes.shape({
+        title: PropTypes.string,
+        main_image: PropTypes.shape({
+            url: PropTypes.string
+        }) 
+    })
+};
+
+export default Slide;

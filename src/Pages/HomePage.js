@@ -4,7 +4,6 @@ import { HomePageContainer, BannerContainer } from 'Components/HomePage/styled';
 import Slider from 'Components/Slider/Slider';
 import ElementsContainer from 'Components/HomePage/ElementsContainer';
 
-//import BannersMock from 'mocks/en-us/featured-banners.json';
 import { useFeaturedBanners } from 'utils/hooks/useFeaturedBanners';
 
 const HomePage = ()=>{

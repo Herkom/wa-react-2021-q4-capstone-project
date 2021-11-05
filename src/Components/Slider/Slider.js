@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { SliderCSS, DotContainer, Dot } from './styled';
+import { SliderCSS } from './styled';
 import SliderContainer from './SliderContainer';
 import Slide from './Slide';
 import Arrow from './Arrow';
+import Dots from './Dots';
 
+//Thanks to Victor recommendation
+//I'm thinking about changing it to just get the width of the parent element
 const getWidth = () => window.innerWidth;
 
 /**
@@ -11,8 +14,7 @@ const getWidth = () => window.innerWidth;
  */
 const Slider = ({width = getWidth(), items}) => {
 	
-	const slides = items.map(i => i);
-	const totalNumberOfSlides = slides.length - 1;
+	const totalNumberOfSlides = items.length - 1;
 
 	const [state, setState] = useState({
 		activeSlide: 0,
@@ -50,37 +52,25 @@ const Slider = ({width = getWidth(), items}) => {
 		});
 	};
 
-	const handleDotClick = (event) => {
-		const slideNumber = parseInt(event.target.id);
-
-		setState({
-			...state,
-			translate: width * slideNumber,
-		  	activeSlide: slideNumber
-		})
-	}
-
 	return (
 		<SliderCSS width={width}>
 			<SliderContainer
 				translate={translate}
 				transition={transition}
-				width={width * slides.length}
+				width={width * items.length}
 				className={'SliderContent'}
 			>
-				{slides.map((_slide, i) => {
+				{items.map((_slide, i) => {
 					return <Slide width={getWidth()} key={`${_slide.id}${i}`} {..._slide} />
 				})}
 			</SliderContainer>
 
 			<Arrow direction="left" handleClick={prevSlide} />
 			<Arrow direction="right" handleClick={nextSlide} />
+
+			{/* Not sure if passing so many props is a good thing */}
+			<Dots slides={items} currentSlide={activeSlide} width={width} state={state} setter={setState}/>
 			
-			<DotContainer>
-				{slides.map((slide, i) => (
-					<Dot key={i} id={i} active={activeSlide === i} onClick={handleDotClick} />
-				))}
-			</DotContainer>
 		</SliderCSS>
 	);
 };

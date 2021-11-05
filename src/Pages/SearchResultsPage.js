@@ -6,7 +6,7 @@ import { ProductContainer } from 'Components/ProductList/styled';
 import ProductElement from "Components/HomePage/ProductElement";
 import Paginator from "Components/ProductList/Paginator";
 
-//To his own file
+//To it's own file
 function useQuery() {
     return new URLSearchParams(useLocation().search);
 }

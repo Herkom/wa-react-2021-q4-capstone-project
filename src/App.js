@@ -6,15 +6,16 @@ import {
   Redirect
 }  from 'react-router-dom';
 
-import Header from './Components/Header';
-import Footer from './Components/Footer';
+import './styles/App.css'
+
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
 import Content from './Components/Content';
 import HomePage from 'Pages/HomePage';
 import ProductListPage from 'Pages/ProductListPage';
 import SearchResultsPage from 'Pages/SearchResultsPage';
-
-import './styles/App.css'
 import ProductDetailPage from 'Pages/ProductDetailPage';
+
 
 function App() {
 

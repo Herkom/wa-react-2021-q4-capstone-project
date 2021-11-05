@@ -1,4 +1,4 @@
-import React/*, { Suspense } */ from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { CategoriesContainer, ProductContainer, SectionHeader } from './styled';
@@ -9,26 +9,14 @@ import Button from 'Components/Button';
 
 import { useFeaturedBanners } from 'utils/hooks/useFeaturedBanners';
 
-//const Slider = React.lazy(() => import('../Slider/Slider'));
-//const ProductElement = React.lazy(() => import('./ProductElement'));
-//const CategoriesElement = React.lazy(() => import('./CategoriesElement'));
-//const Button = React.lazy(() => import('Components/Button'));
-
 const ElementsContainer = ({type, pageSize, optional}) => {
     const { data, isLoading } = useFeaturedBanners(type, pageSize, optional);
-    /* console.group(type)
-    console.log('Type',type);
-    console.log('Page size', pageSize);
-    console.log('Data', data.results);
-    console.log('Is loading?', isLoading);
-    console.groupEnd(); */
 
     if(!isLoading){
         switch(type){
             case 'category' :
                 return(
                     <>
-                        {/* <Suspense fallback={<div>Loading...</div>}> */}
                             <SectionHeader>Categories</SectionHeader>
                             <CategoriesContainer>    
                                 {data.results.map( (item, index) => (
@@ -39,14 +27,12 @@ const ElementsContainer = ({type, pageSize, optional}) => {
                                     </li>
                                 ))}
                             </CategoriesContainer>
-                        {/* </Suspense> */}
                     </>
                 )
 
             case 'product' :
                 return(
                     <>
-                        {/* <Suspense fallback={<div>Loading...</div>}> */}
                             <SectionHeader>Products</SectionHeader>
                             <ProductContainer>
                                 {data.results.map(item => (
@@ -60,7 +46,6 @@ const ElementsContainer = ({type, pageSize, optional}) => {
                                     View all products
                                 </Button>
                             </Link>
-                        {/* </Suspense> */}
                     </>
                 )
                 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { fontTypes } from "styles/baseFonts";
 
 export const Container = styled.ul`
     transform: translateX(-${props => props.translate}px);
@@ -67,10 +68,9 @@ export const InfoContainer = styled.div`
     }
 `;
 export const Header = styled.h2`
-    font-family: 'DM Serif Display', serif;
+    font-family: var(--main-font);
     text-transform: capitalize;
-    font-size: 3rem;
-    line-height: 49px;
+    ${fontTypes.slideTitle};
     padding: 2rem;
     padding-bottom:1rem;
     background: white;
@@ -83,9 +83,9 @@ export const Header = styled.h2`
     }
 `;
 export const Description = styled.p`
-    font-family: 'Mulish', sans-serif;
+    font-family: var(--secondary-font);
     text-transform: capitalize;
-    font-weight: 500;
+    ${fontTypes.slideDescription};
     padding: 0 2rem 2rem 2rem;
     background: white;
 
