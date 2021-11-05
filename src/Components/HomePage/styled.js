@@ -48,9 +48,13 @@ export const CategoriesContainer = styled.ul`
 export const SectionHeader = styled.h4`
     font-family: var(--secondary-font);
     text-transform: uppercase;
-    ${fontTypes.sectionHeader}
+    ${fontTypes.subtitleDesktop}
     margin: 1rem 0 0.7rem 10vw;
     align-self: start;
+
+    @media(max-width:600px){
+        ${fontTypes.subtitleMobile}
+    }
 `
 export const CategoryArticle = styled.article`
     position: relative;
@@ -98,7 +102,8 @@ export const CategoryTitle = styled.h3`
     margin: 1rem;
     bottom: 0;
     right: 0;
-
+    font-family: var(--main-font);
+    ${fontTypes.subtitle2Desktop}
         color: black;
         text-decoration: none;
         letter-spacing: 1px;

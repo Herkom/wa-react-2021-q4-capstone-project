@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 import { useFeaturedBanners } from "utils/hooks/useFeaturedBanners";
 import { BannerContainer } from "Components/HomePage/styled";
 import Slider from "Components/Slider/Slider";
-import Button from "Components/Button";
+import Button from "Components/Button/Button";
 
 const ProductDetailPageContainer = styled.section`
     display: flex;

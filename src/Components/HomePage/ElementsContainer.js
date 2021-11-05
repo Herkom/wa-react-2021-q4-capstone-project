@@ -5,7 +5,7 @@ import { CategoriesContainer, ProductContainer, SectionHeader } from './styled';
 
 import ProductElement from './ProductElement';
 import CategoriesElement from './CategoriesElement';
-import Button from 'Components/Button';
+import Button from 'Components/Button/Button';
 
 import { useFeaturedBanners } from 'utils/hooks/useFeaturedBanners';
 

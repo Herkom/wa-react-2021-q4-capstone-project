@@ -1,4 +1,5 @@
 const rem = true;
+
 const fontSizesPx = [
     '8px',
     '12px',
@@ -35,112 +36,101 @@ export const fontTypes = {
         line-height: ${lineHeights[3]}px;
         font-weight: ${fontWeights[2]};
     `,
-    slideTitle: `
+
+
+    titleDesktop: `
         font-size: ${fontSizes[9]};
         line-height: ${lineHeights[9]}px;
         font-weight: ${fontWeights[1]};
     `,
-    slideDescription: `
-        font-size: ${fontSizes[2]};
-        line-height: ${lineHeights[2]}px;
-        font-weight: ${fontWeights[0]};
+    titleMobile: `
+        font-size: ${fontSizes[6]};
+        line-height: ${lineHeights[6]}px;
+        font-weight: ${fontWeights[1]};
     `,
-    sectionHeader: `
-        font-size: ${fontSizes[4]};
-        line-height: ${lineHeights[4]}px;
+
+
+    subtitleDesktop: `
+        font-size: ${fontSizes[5]};
+        line-height: ${lineHeights[5]}px;
         font-weight: ${fontWeights[2]};
     `,
-    categoryTitle: `
+    subtitleMobile:`
+        font-size: ${fontSizes[3]};
+        line-height: ${lineHeights[3]}px;
+        font-weight: ${fontWeights[2]};
+    `,
+
+
+    subtitle2Desktop: `
+        font-size: ${fontSizes[3]};
+        line-height: ${lineHeights[3]}px;
+        font-weight: ${fontWeights[2]};
+    `,
+    subtitle2Mobile: `
+        font-size: ${fontSizes[3]};
+        line-height: ${lineHeights[3]}px;
+        font-weight: ${fontWeights[2]};
+    `,
+
+
+    subtitle2DesktopQuote: `
         font-size: ${fontSizes[3]};
         line-height: ${lineHeights[3]}px;
         font-weight: ${fontWeights[1]};
+        font-style: italic;
     `,
-    buttonText: `
+    subtitle2MobileQuote: `
+        font-size: ${fontSizes[3]};
+        line-height: ${lineHeights[3]}px;
+        font-weight: ${fontWeights[1]};
+        font-style: italic;
+    `,
+    paragraph: `
         font-size: ${fontSizes[2]};
         line-height: ${lineHeights[2]}px;
-        font-weight: ${fontWeights[4]};
-    `,
-    footerText: `
-        font-size: ${fontSizes[2]};
-        line-height: ${lineHeights[3]}px;
         font-weight: ${fontWeights[0]};
     `,
-
-
-
-
-
-  /* titleMobile: `font-size: ${fontSizes[6]};
-          font-weight: ${fontWeights[1]};
-          line-height: ${lineHeights[6]}px;`,
-
-  subtitleMobile: `font-size: ${fontSizes[4]};
-            font-weight:${fontWeights[1]};
-            line-height: ${lineHeights[4]}px;`,
-
-  subtitle2Mobile: `font-size:  ${fontSizes[3]};
-              font-weight: ${fontWeights[1]};
-              line-height: ${lineHeights[3]}px;`,
-
-  paragraph: `font-size: ${fontSizes[2]};
-              font-weight: ${fontWeights[0]};
-              line-height: ${lineHeights[2]}px;`,
-
-  paragraphBold: `font-size: ${fontSizes[2]};
-                  font-weight: ${fontWeights[1]};
-                  line-height: ${lineHeights[2]}px;`,
-
-  paragraphHyperlink: `font-size: ${fontSizes[2]};
-                       font-weight:  ${fontWeights[1]};
-                       line-height: ${lineHeights[2]}px;
-                       text-decoration-line: underline;`,
-
-  caption: `font-size:  ${fontSizes[1]};
-            font-weight:  ${fontWeights[0]};
-            line-height: ${lineHeights[1]}px;`,
-
-  captionBold: `font-size: ${fontSizes[1]};
-                font-weight: ${fontWeights[1]};
-                line-height: ${lineHeights[1]}px;`,
-
-  captionCrossed: `font-size:  ${fontSizes[1]};
-                   font-weight:  ${fontWeights[0]};
-                   line-height: ${lineHeights[1]}px;
-                   text-decoration-line: line-through;`,
-
-  micro: `font-size: ${fontSizes[0]};
-          font-weight: ${fontWeights[0]};
-          line-height:  ${lineHeights[0]}px;`,
-
-  microBold: `font-size: ${fontSizes[0]};
-              font-weight: ${fontWeights[1]};
-              line-height: ${lineHeights[0]}px;`,
-
-  microCrossed: `font-size: ${fontSizes[0]};
-                 font-weight: ${fontWeights[0]};
-                 line-height: ${lineHeights[0]}px;
-                 text-decoration-line: line-through;`,
-
-  titleDesktop: `font-size: ${fontSizes[8]};
-                 font-weight: ${fontWeights[1]};
-                 line-height: ${lineHeights[8]}px;`,
-
-  subtitleDesktop: `font-size: ${fontSizes[7]};
-                      font-weight: ${fontWeights[1]};
-                      line-height: ${lineHeights[7]}px;
-                   `,
-
-  subtitle2Desktop: ` font-size: ${fontSizes[5]};
-                      font-weight: ${fontWeights[1]};
-                      line-height: ${lineHeights[5]}px;`,
-
-  subtitle2DesktopQuote: `font-size ${fontSizes[5]};
-                          font-weight: ${fontWeights[1]};
-                          line-height: ${lineHeights[5]}px;
-                          font-style: italic;`,
-
-  subtitle2MobileQuote: `font-size:  ${fontSizes[3]};
-              font-weight: ${fontWeights[1]};
-              line-height: ${lineHeights[3]}px;
-              font-style: italic;`, */
+    paragraphBold: `
+        font-size: ${fontSizes[2]};
+        line-height: ${lineHeights[2]}px;
+        font-weight: ${fontWeights[2]};
+    `,
+    paragraphHyperlink: `
+        font-size: ${fontSizes[2]};
+        line-height: ${lineHeights[2]}px;
+        font-weight: ${fontWeights[2]};
+        text-decoration-line: underline;
+    `,
+    caption: `
+        font-size:  ${fontSizes[1]};
+        line-height: ${lineHeights[1]}px;
+        font-weight:  ${fontWeights[1]};
+    `,
+    captionBold: `
+        font-size: ${fontSizes[1]};
+        line-height: ${lineHeights[1]}px;
+        font-weight: ${fontWeights[2]};
+    `,
+    captionCrossed: `
+        font-size:  ${fontSizes[1]};
+        line-height: ${lineHeights[1]}px;
+        font-weight:  ${fontWeights[0]};
+        text-decoration-line: line-through;
+    `,
+    micro: `
+        font-size: ${fontSizes[0]};
+        line-height:  ${lineHeights[0]}px;
+        font-weight: ${fontWeights[1]};
+    `,
+    microBold: `
+        font-size: ${fontSizes[0]};
+        line-height: ${lineHeights[0]}px;
+        font-weight: ${fontWeights[2]};
+    `,
+    microCrossed: `
+        font-size: ${fontSizes[0]};
+        line-height: ${lineHeights[0]}px;
+        font-weight: ${fontWeights[0]};
+        text-decoration-line: line-through;`,
 };

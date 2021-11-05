@@ -9,7 +9,7 @@ export const StyledFooter = styled.footer`
     color: white;
     background-color: #666666;
     font-family: var(--secondary-font);
-    ${ fontTypes.footerText }
+    ${ fontTypes.paragraph }
 
     img{
         height: 30px;

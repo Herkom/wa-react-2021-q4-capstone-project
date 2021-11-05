@@ -57,7 +57,7 @@ q:before, q:after {
 }
 
 html{
-   font-family: var(--main-font)
+   font-size: 16px;
 }
 body{
 	max-height: 100vh;

@@ -5,7 +5,7 @@ import { HeaderStyles, LogoContainer, Cart } from './styled';
 
 import logo from 'assets/svgs/logo.svg';
 import cartIcon from 'assets/svgs/cart.svg';
-import SearchInput from '../SearchInput';
+import SearchInput from '../SearchInput/SearchInput';
 
 const Header = () =>{
     return (

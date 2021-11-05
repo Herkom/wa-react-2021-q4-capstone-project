@@ -53,6 +53,7 @@ export const SlideItem = styled.li`
     background-position: center;
     position: relative;
 `;
+
 export const InfoContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -67,25 +68,26 @@ export const InfoContainer = styled.div`
         background-color: white;
     }
 `;
+
 export const Header = styled.h2`
     font-family: var(--main-font);
     text-transform: capitalize;
-    ${fontTypes.slideTitle};
+    ${fontTypes.titleDesktop};
     padding: 2rem;
     padding-bottom:1rem;
     background: white;
 
     @media(max-width:600px){
-        font-size: 2rem;
-        line-height: 30px;
+        ${fontTypes.titleMobile};
         padding: 1.3rem 2rem 0.5rem;
         white-space: normal;
     }
 `;
+
 export const Description = styled.p`
     font-family: var(--secondary-font);
     text-transform: capitalize;
-    ${fontTypes.slideDescription};
+    ${fontTypes.paragraph};
     padding: 0 2rem 2rem 2rem;
     background: white;
 
@@ -101,6 +103,7 @@ export const SliderCSS = styled.div`
     overflow: hidden;
     white-space: nowrap;
 `;
+
 export const DotContainer = styled.div`
     position: absolute;
     bottom: 25px;
