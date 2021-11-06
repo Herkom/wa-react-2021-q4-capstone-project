@@ -22,6 +22,8 @@ const Slide = ({ width, ...props }) => {
                             productDescription.length > 30
                             ? productDescription.slice(0,30)
                             : productDescription
+
+                            //Shoul I just leave de slice???
                         }
                     </Description>
                 </InfoContainer>

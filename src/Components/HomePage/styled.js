@@ -108,3 +108,58 @@ export const CategoryTitle = styled.h3`
         text-decoration: none;
         letter-spacing: 1px;
 `;
+
+export const ProductHoverButton = styled.div`
+    height: 0%;
+    width: 0%;
+    background-color: rgba(100, 255, 255, 0.7);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+export const Article = styled.article`
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    max-width: 20rem;
+    margin: 1rem;
+    position: relative;
+
+    @media(max-width: 600px){
+        border: 1px solid #d0caca;
+        padding: 1rem;
+    }
+
+    &:hover ${ProductHoverButton}{
+        height: 100%;
+        width: 100%;
+    }
+`;
+export const Name = styled.h4`
+    font: 500 1rem/1.5rem 'Mulish', sans-serif;
+    text-align: center;
+    color: #666666;
+`;
+export const SKU = styled.p`
+    margin: 0.5rem 0 1rem 0;
+    font: 400 10px/10px 'Mulish', sans-serif;
+`;
+export const ImageContainer = styled.div`
+    width: 100%;
+    max-height: 15rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        max-width: 100%;
+    }
+    @media(max-width: 600px){
+        width: 80%;
+        margin-top: 1rem;
+    }
+`;
