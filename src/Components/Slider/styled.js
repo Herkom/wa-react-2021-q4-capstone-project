@@ -1,6 +1,15 @@
 import styled from 'styled-components';
 import { fontTypes } from "styles/baseFonts";
 
+export const SliderCSS = styled.div`
+    position: relative;
+    width: ${props => props.width}px;
+    height: ${props => props.height ? `${props.height}px` : '100%' };
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+`;
+
 export const Container = styled.ul`
     transform: translateX(-${props => props.translate}px);
     transition: transform ease-out ${props => props.transition}s;
@@ -9,49 +18,14 @@ export const Container = styled.ul`
     display: flex;
 `;
 
-export const SVG = styled.div`
-    display: flex;
-    position: absolute;
-    top: calc( 50% - 65px );
-    ${props => props.direction === 'right' ? `right: 25px` : `left: 25px`};
-    height: 65px;
-    width: 65px;
-    justify-content: center;
-    background: none;
-    border: 2px solid white;
-    border-radius: 50%;
-    cursor: pointer;
-    align-items: center;
-    transition: all ease-in 0.1s;
-
-    &:hover {
-        transform: scale(1.1);
-        background: #e4986a;
-        border: 2px solid #e4986a;
-    }
-
-    img {
-        transform: translateX(${props => props.direction === 'left' ? '-2' : '2'}px);
-    }
-    &:focus {
-        outline: 0;
-    }
-
-    @media(max-width: 600px){
-        top: calc( 50% - 30px );
-        height: 50px;
-        width: 50px;
-    }
-`;
-
 export const SlideItem = styled.li`
     height: 100%;
     width: ${props => props.width}px;
-    background-image: url('${props => props.content}');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     position: relative;
+
+    img{
+        width: 100%;
+    }
 `;
 
 export const InfoContainer = styled.div`
@@ -96,12 +70,39 @@ export const Description = styled.p`
     }
 `;
 
-export const SliderCSS = styled.div`
-    position: relative;
-    width: ${props => props.width}px;
-    margin: 0 auto;
-    overflow: hidden;
-    white-space: nowrap;
+export const SVG = styled.div`
+    display: flex;
+    position: absolute;
+    top: calc( 50% - 65px );
+    ${props => props.direction === 'right' ? `right: 25px` : `left: 25px`};
+    height: 65px;
+    width: 65px;
+    justify-content: center;
+    background: none;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+    transition: all ease-in 0.1s;
+
+    &:hover {
+        transform: scale(1.1);
+        background: #e4986a;
+        border: 2px solid #e4986a;
+    }
+
+    img {
+        transform: translateX(${props => props.direction === 'left' ? '-2' : '2'}px);
+    }
+    &:focus {
+        outline: 0;
+    }
+
+    @media(max-width: 600px){
+        top: calc( 50% - 30px );
+        height: 50px;
+        width: 50px;
+    }
 `;
 
 export const DotContainer = styled.div`
@@ -119,6 +120,7 @@ export const Dot = styled.span`
     cursor: pointer;
     border-radius: 50%;
     background: ${props => props.active ? 'black' : 'white'};
+    box-shadow: 0px 1px 1px gray;
 
     @media (max-width: 600px){
         padding: 10px;

@@ -2,11 +2,11 @@ import React from 'react';
 import Button from 'Components/Button/Button';
 import { Link } from 'react-router-dom';
 
-import { ProductHoverButton, Article, Name, SKU, ImageContainer } from './styled'
+import { ProductHoverButton, Article, Text, Name, SKU, ImageContainer } from './styled'
 
-const ProductElement = ({...props}) => {
+const ProductElement = ({id, data, showCategory, showShortDescription}) => {
 
-    const productId = props.id;
+    const productId = id;
 
     const {
         name,
@@ -15,18 +15,18 @@ const ProductElement = ({...props}) => {
         mainimage,
         price,
         short_description
-    } = props.data;
+    } = data;
 
     return(
         <Article>
-            {props.showCategory ? <p>{category.slug}</p> : null}
+            {showCategory ? <Text>{category.slug}</Text> : null}
             <ImageContainer>
                 <img alt={mainimage.alt} src={mainimage.url}/>
             </ImageContainer>
             <Name>{name}</Name>
             <SKU>SKU: {sku}</SKU>
-            <p>$ {price}</p>
-            {props.showShortDescription ? <p>{short_description}</p>: null}
+            <Text>$ {price}</Text>
+            {showShortDescription ? <p>{short_description}</p>: null}
 
             <ProductHoverButton>
                 <Button>Add to cart</Button>

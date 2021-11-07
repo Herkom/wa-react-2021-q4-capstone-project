@@ -12,7 +12,7 @@ const getWidth = () => window.innerWidth;
 /**
  * @function Slider
  */
-const Slider = ({width = getWidth(), items}) => {
+const Slider = ({width = getWidth(), height, items}) => {
 	
 	const totalNumberOfSlides = items.length - 1;
 
@@ -53,7 +53,7 @@ const Slider = ({width = getWidth(), items}) => {
 	};
 
 	return (
-		<SliderCSS width={width}>
+		<SliderCSS width={width} height={height}>
 			<SliderContainer
 				translate={translate}
 				transition={transition}
@@ -69,7 +69,7 @@ const Slider = ({width = getWidth(), items}) => {
 			<Arrow direction="right" handleClick={nextSlide} />
 
 			{/* Not sure if passing so many props is a good thing */}
-			<Dots slides={items} currentSlide={activeSlide} width={width} state={state} setter={setState}/>
+			<Dots slides={items} currentSlide={activeSlide} width={width} state={state} slideSetter={setState}/>
 			
 		</SliderCSS>
 	);

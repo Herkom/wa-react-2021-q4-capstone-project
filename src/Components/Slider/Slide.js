@@ -8,23 +8,24 @@ const Slide = ({ width, ...props }) => {
         const {
             title,
             description:[
-                {text: productDescription}
+                {text}
             ],
             main_image
         } = props.data;
 
+        //Shoul I just leave de slice???
+        const productDescription =  text.length > 30
+                                    ? text.slice(0,30) + '...'
+                                    : text
+
         return (
-            <SlideItem width={width} content={main_image.url}>
+            //I've just find out that SlideItem returns a li instead of a img tag
+            <SlideItem width={width} >
+                <img alt={title} src={main_image.url}/>
                 <InfoContainer>
                     <Header>{title.toLowerCase()}</Header>
                     <Description>
-                        {   
-                            productDescription.length > 30
-                            ? productDescription.slice(0,30)
-                            : productDescription
-
-                            //Shoul I just leave de slice???
-                        }
+                        { productDescription }
                     </Description>
                 </InfoContainer>
                 
@@ -33,7 +34,9 @@ const Slide = ({ width, ...props }) => {
     }
 
     return(
-        <SlideItem width={width} content={props.image.url}></SlideItem>
+        <SlideItem width={width}>
+            <img alt={props.image.url} src={props.image.url}/>
+        </SlideItem>
     )
 
 };

@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { DotContainer, Dot} from './styled';
 
-const Dots = ({ slides, currentSlide, width, state, setter }) => {
+const Dots = ({ slides, currentSlide, width, state, slideSetter }) => {
 
   const handleDotClick = (i) =>{
-    setter({
+    slideSetter({
       ...state,
       translate: width * i,
       activeSlide: i
@@ -25,7 +25,7 @@ Dots.propTypes = {
   currentSlide: PropTypes.number,
   width: PropTypes.number,
   state: PropTypes.object,
-  setter: PropTypes.func
+  slideSetter: PropTypes.func
 };
 
 export default Dots;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyledButton } from './styled';
 
-const Button = (props) => {
+const Button = ({ children }) => {
     return(
         <StyledButton>
-            {props.children}
+            {children}
         </StyledButton>
     );
 };

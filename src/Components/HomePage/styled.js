@@ -8,18 +8,9 @@ export const HomePageContainer = styled.section`
     align-items: center;
 `;
 
-export const ProductContainer = styled.ul`
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, 15rem);
-    justify-content: center;
-    margin: 0 10vw;
-    width: calc( 100% - 20vw );
-`;
-
 export const BannerContainer = styled.article`
-    ${props => props.width ? 'width: '+ props.width+'px;': `width: 100%;`}
-    height: 90vh;
+    ${props => props.width ? 'width: '+ props.width +'px;': 'width: 100%;'}
+    ${props => props.height ? 'height:'+ props.height +'px;' : 'height: calc(100vh - 6rem);'}
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -43,6 +34,15 @@ export const CategoriesContainer = styled.ul`
         min-width: 350px;
         margin: 0.5rem;
     }
+`;
+
+export const ProductContainer = styled.ul`
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, 15rem);
+    justify-content: center;
+    margin: 0 10vw;
+    width: calc( 100% - 20vw );
 `;
 
 export const SectionHeader = styled.h4`
@@ -119,6 +119,7 @@ export const ProductHoverButton = styled.div`
     justify-content: center;
     align-items: center;
 `;
+
 export const Article = styled.article`
     display: flex;
     flex-direction: column;
@@ -138,15 +139,25 @@ export const Article = styled.article`
         width: 100%;
     }
 `;
+
+export const Text = styled.p`
+    font-family: var(--main-font);
+    ${fontTypes.paragraph}
+`;
+
 export const Name = styled.h4`
-    font: 500 1rem/1.5rem 'Mulish', sans-serif;
+    font-family: var(--secondary-font);
+    ${fontTypes.paragraph}
     text-align: center;
     color: #666666;
 `;
+
 export const SKU = styled.p`
     margin: 0.5rem 0 1rem 0;
-    font: 400 10px/10px 'Mulish', sans-serif;
+    font-family: var(--secondary-font);
+    ${fontTypes.caption}
 `;
+
 export const ImageContainer = styled.div`
     width: 100%;
     max-height: 15rem;

@@ -17,35 +17,35 @@ const ElementsContainer = ({type, pageSize, optional}) => {
             case 'category' :
                 return(
                     <>
-                            <SectionHeader>Categories</SectionHeader>
-                            <CategoriesContainer>    
-                                {data.results.map( (item, index) => (
-                                    <li key={item.id} id={item.id}>
-                                        <Link to={`/products?category=${item.slugs[0]}`}>
-                                            <CategoriesElement index={index}  {...item} />
-                                        </Link>
-                                    </li>
-                                ))}
-                            </CategoriesContainer>
+                        <SectionHeader>Categories</SectionHeader>
+                        <CategoriesContainer>    
+                            {data.results.map( (item, index) => (
+                                <li key={item.id} id={item.id}>
+                                    <Link to={`/products?category=${item.slugs[0]}`}>
+                                        <CategoriesElement index={index}  {...item} />
+                                    </Link>
+                                </li>
+                            ))}
+                        </CategoriesContainer>
                     </>
                 )
 
             case 'product' :
                 return(
                     <>
-                            <SectionHeader>Products</SectionHeader>
-                            <ProductContainer>
-                                {data.results.map(item => (
-                                    <li key={item.id} id={item.id}>
-                                        <ProductElement showCategory {...item} />
-                                    </li>
-                                ))}
-                            </ProductContainer>
-                            <Link to="/products">
-                                <Button>
-                                    View all products
-                                </Button>
-                            </Link>
+                        <SectionHeader>Products</SectionHeader>
+                        <ProductContainer>
+                            {data.results.map(item => (
+                                <li key={item.id} id={item.id}>
+                                    <ProductElement showCategory {...item} />
+                                </li>
+                            ))}
+                        </ProductContainer>
+                        <Link to="/products">
+                            <Button>
+                                View all products
+                            </Button>
+                        </Link>
                     </>
                 )
                 

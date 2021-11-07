@@ -6,9 +6,9 @@ import Paginator from 'Components/ProductList/Paginator';
 
 import { useFeaturedBanners } from 'utils/hooks/useFeaturedBanners';
 
-import ProductsMock from 'mocks/en-us/products.json';
+import productsMock from 'mocks/en-us/products.json';
 
-const allProducts = ProductsMock.results;
+const allProducts = productsMock.results;
 
 const ProductListPage = () => {
     const { data:Categories, isLoading:areCategoriesLoaded } = useFeaturedBanners('category', 30);
@@ -18,11 +18,11 @@ const ProductListPage = () => {
     const [ hasTimePassed, setHasTimePassed ] = useState(false);
     const [ showResetButton, setShowResetButton] = useState(false);
     
-    const filter = () => {
+    const getTheFilteredProducts = () => {
         return allProducts.filter( (item) => 
             chosedCategories.items.indexOf(item.data.category.slug) > -1
         );
-    }
+    };
 
 
     const addCategory = (array, name) =>{
@@ -31,7 +31,7 @@ const ProductListPage = () => {
         setChosedCategories({
             items: array
         });
-    }
+    };
 
 
     const removeCategory = (array, name) =>{
@@ -41,7 +41,7 @@ const ProductListPage = () => {
         setChosedCategories({
             items: array
         });
-    }
+    };
 
 
     const handleCheckboxChange = (event) => {
@@ -59,11 +59,16 @@ const ProductListPage = () => {
         if(chosedCategories.items.length > 0)
             setShowResetButton(true)
 
-        const filteredProducts = filter();
+        const resultsFromTheFilter = getTheFilteredProducts();
 
         setFilteredProducts({
-            products: filteredProducts
+            products: resultsFromTheFilter
         });
+    };
+
+    const resetFilters = () => {
+        setFilteredProducts({ products: [] });
+        setChosedCategories({ items: [] });
     }
 
     //If no category is selected show all products
@@ -76,11 +81,12 @@ const ProductListPage = () => {
 
     }, [filteredProducts]);
 
+
     useEffect(() => {
         setTimeout(() => {
             setHasTimePassed(true);
         }, 2000);
-    }, [])
+    }, []);
 
     return(
         <>
@@ -104,11 +110,10 @@ const ProductListPage = () => {
                     }
                     {
                         showResetButton ? 
-                            <input type="reset" value="Clear filters" onClick={ () => {
-                                setFilteredProducts({ products: [] });
-                                setChosedCategories({ items: [] });
-                                }
-                            }/>
+                            <input
+                                type="reset"
+                                value="Clear filters"
+                                onClick={resetFilters}/>
                         : null
                     }
                 </CategoriesContainer>

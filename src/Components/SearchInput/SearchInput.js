@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { withRouter } from "react-router";
+import { useHistory } from "react-router";
 
 import { SearchInputForm } from './styled'
 
-const SearchInput = withRouter((props) => {
+const SearchInput = () => {
     const [searchInputValue, setSearchInputValue] = useState('')
 
-    const { history } = props;
+    let history = useHistory();
 
     const handleSearch = (event) => {
         
@@ -39,6 +39,6 @@ const SearchInput = withRouter((props) => {
             </button>
         </SearchInputForm>
     )
-});
+};
 
 export default SearchInput

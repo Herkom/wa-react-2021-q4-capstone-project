@@ -36,8 +36,6 @@ export const fontTypes = {
         line-height: ${lineHeights[3]}px;
         font-weight: ${fontWeights[2]};
     `,
-
-
     titleDesktop: `
         font-size: ${fontSizes[9]};
         line-height: ${lineHeights[9]}px;
@@ -48,8 +46,6 @@ export const fontTypes = {
         line-height: ${lineHeights[6]}px;
         font-weight: ${fontWeights[1]};
     `,
-
-
     subtitleDesktop: `
         font-size: ${fontSizes[5]};
         line-height: ${lineHeights[5]}px;
@@ -60,8 +56,6 @@ export const fontTypes = {
         line-height: ${lineHeights[3]}px;
         font-weight: ${fontWeights[2]};
     `,
-
-
     subtitle2Desktop: `
         font-size: ${fontSizes[3]};
         line-height: ${lineHeights[3]}px;
@@ -72,8 +66,6 @@ export const fontTypes = {
         line-height: ${lineHeights[3]}px;
         font-weight: ${fontWeights[2]};
     `,
-
-
     subtitle2DesktopQuote: `
         font-size: ${fontSizes[3]};
         line-height: ${lineHeights[3]}px;
