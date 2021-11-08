@@ -95,6 +95,7 @@ export const useCategoriesFilter = () => {
             })
         }
             
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[chosedCategories, areProductsLoaded])
 
     return {
