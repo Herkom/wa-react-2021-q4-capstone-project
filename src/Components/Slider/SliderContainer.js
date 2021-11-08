@@ -1,12 +1,20 @@
-import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Container } from './styled';
 
-const SliderContainer = (props) => {
+const SliderContainer = ({width, translate, transition, children}) => {
     return (
-        <Container width={props.width} translate={props.translate} transition={props.transition}>
-            {props.children}
+        <Container width={width} translate={translate} transition={transition}>
+            {children}
         </Container>
     );
 };
 
-export default SliderContainer
+SliderContainer.propTypes = {
+    width: PropTypes.number,
+    translate: PropTypes.number,
+    transition: PropTypes.number,
+    children: PropTypes.node
+};
+
+export default SliderContainer;

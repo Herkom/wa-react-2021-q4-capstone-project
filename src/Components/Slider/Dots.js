@@ -1,38 +1,31 @@
-import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { DotContainer, Dot} from './styled';
 
-const DotContainer = styled.div`
-    position: absolute;
-    bottom: 25px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
+const Dots = ({ slides, currentSlide, width, state, slideSetter }) => {
 
-const Dot = styled.span`
-    padding: 5px;
-    margin-right: 15px;
-    cursor: pointer;
-    border-radius: 50%;
-    background: ${props => props.active ? 'black' : 'white'};
-`;
-
-const Dots = ({ slides, currentSlide, setter }) => {
-
-  const handleClick = (i) =>{
-    setter({
+  const handleDotClick = (i) =>{
+    slideSetter({
+      ...state,
+      translate: width * i,
       activeSlide: i
-    })
-  }
+    });
+  };
 
   return (
     <DotContainer>
       {slides.map((slide, i) => (
-        <Dot key={i} active={currentSlide === i} onClick={handleClick(i)} />
+        <Dot key={i} active={currentSlide === i} onClick={()=>handleDotClick(i)} />
       ))}
     </DotContainer>
   );
 };
 
-export default Dots
+Dots.propTypes = {
+  slides: PropTypes.array,
+  currentSlide: PropTypes.number,
+  width: PropTypes.number,
+  state: PropTypes.object,
+  slideSetter: PropTypes.func
+};
+
+export default Dots;

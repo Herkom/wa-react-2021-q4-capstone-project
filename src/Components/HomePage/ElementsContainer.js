@@ -1,86 +1,59 @@
-import React, { Suspense } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { BannerContainer, CategoriesContainer, ProductContainer, SectionHeader } from './styled';
+import { CategoriesContainer, ProductContainer, SectionHeader } from './styled';
 
-const Slider = React.lazy(() => import('../Slider/Slider'));
-const ProductElement = React.lazy(() => import('./ProductElement'));
-const CategoriesElement = React.lazy(() => import('./CategoriesElement'));
-const Button = React.lazy(() => import('Components/Button'));
+import ProductElement from './ProductElement';
+import CategoriesElement from './CategoriesElement';
+import Button from 'Components/Button/Button';
 
-const ElementsContainer = (props) => {
-    //const [fetchedData, setFetchedData] = React.useState(null);
-    
-    //TODO: Check if its really nedded: <Error boundarys />
-    //const [error, setError] = React.useState(null);
+import { useFeaturedBanners } from 'utils/hooks/useFeaturedBanners';
 
-    //TODO: Check if its really needed:  fallback={}
-    //const [isLoading, setIsLoading] = React.useState(false);
-    
-    /* React.useEffect(() => {
-        setIsLoading(true);
-        
-        setError(null);
-        setIsLoading(false);
-    }, []); */
+const ElementsContainer = ({type, pageSize, optional}) => {
+    const { data, isLoading } = useFeaturedBanners(type, pageSize, optional);
 
-    const fetchedData = props.source.results;
-
-    /* if ( isLoading ){
-        return ('Here should be a skeleton')
-    }
-    else if( error ){
-        return ('Here should be an apologize and a refresh page button')
-    }
-    else  */if( fetchedData.length > 0 ){
-        switch(props.type){
-            case 'Banner' :
+    if(!isLoading){
+        switch(type){
+            case 'category' :
                 return(
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <BannerContainer>
-                            <Slider items={fetchedData} />
-                        </BannerContainer>
-                    </Suspense>
-                )
-
-            case 'Categories' :
-                return(
-                    <Suspense fallback={<div>Loading...</div>}>
+                    <>
                         <SectionHeader>Categories</SectionHeader>
                         <CategoriesContainer>    
-                            {fetchedData.map( (item, index) => (
+                            {data.results.map( (item, index) => (
                                 <li key={item.id} id={item.id}>
-                                    <CategoriesElement index={index}  {...item} />
+                                    <Link to={`/products?category=${item.slugs[0]}`}>
+                                        <CategoriesElement index={index}  {...item} />
+                                    </Link>
                                 </li>
                             ))}
                         </CategoriesContainer>
-                    </Suspense>
+                    </>
                 )
 
-            case 'Products' :
+            case 'product' :
                 return(
                     <>
-                        <Suspense fallback={<div>Loading...</div>}>
-                            <SectionHeader>Products</SectionHeader>
-                            <ProductContainer>
-                                {fetchedData.map(item => (
-                                    <li key={item.id} id={item.id}>
-                                        <ProductElement showCategory={false} {...item} />
-                                    </li>
-                                ))}
-                            </ProductContainer>
-                            <Button goTo="/wa-react-2021-q4-capstone-project/products">
+                        <SectionHeader>Products</SectionHeader>
+                        <ProductContainer>
+                            {data.results.map(item => (
+                                <li key={item.id} id={item.id}>
+                                    <ProductElement showCategory {...item} />
+                                </li>
+                            ))}
+                        </ProductContainer>
+                        <Link to="/products">
+                            <Button>
                                 View all products
                             </Button>
-                        </Suspense>
+                        </Link>
                     </>
                 )
                 
             default:
-        }
+        }        
     }
-    else{
-        return null
-    }
-}
+
+    return <div>Loading...</div>;
+};
 
 export default ElementsContainer

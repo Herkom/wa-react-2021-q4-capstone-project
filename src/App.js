@@ -1,39 +1,51 @@
 import React from 'react';
-import {useRoutes} from 'hookrouter';
-
-import Header from './Components/Header';
-import Footer from './Components/Footer';
-import Content from './Components/Content';
-import HomePage from 'Pages/HomePage';
-import ProductList from 'Pages/ProductList';
-
-import { useFeaturedBanners } from './utils/hooks/useFeaturedBanners';
-
-
-//import getPathname from 'utils/getPathname';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+}  from 'react-router-dom';
 
 import './styles/App.css'
 
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
+import Content from './Components/Content';
+import HomePage from 'Pages/HomePage';
+import ProductListPage from 'Pages/ProductListPage';
+import SearchResultsPage from 'Pages/SearchResultsPage';
+import ProductDetailPage from 'Pages/ProductDetailPage';
+
+
 function App() {
-  const { data, isLoading } = useFeaturedBanners();
-  console.log(data, isLoading);
-
-  const routes = {
-    '/wa-react-2021-q4-capstone-project': () => <HomePage />,
-    '/wa-react-2021-q4-capstone-project/': () => <HomePage />,
-    '/wa-react-2021-q4-capstone-project/products': () => <ProductList />
-  };
-
-  const routeResult = useRoutes(routes);
 
   return (
-    <>
+    <Router>
       <Header />
       <Content>
-        { routeResult }
+        <Switch>
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
+          <Route path="/wa-react-2021-q4-capstone-project/">
+            <Redirect to="/home" />
+          </Route>
+          <Route path="/home">
+            <HomePage />
+          </Route>
+          <Route path="/products">
+            <ProductListPage />
+          </Route>
+          <Route path="/product/:id">
+            <ProductDetailPage />
+          </Route>
+          <Route path="/search" >
+            <SearchResultsPage />
+          </Route>
+        </Switch>
       </Content>
       <Footer />
-    </>
+    </Router>
   );
 };
 
