@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { fontTypes } from "styles/baseFonts";
 
-export const StyledButton = styled.div`
+export const StyledButton = styled.button`
     padding: 1rem 1.5rem;
     background-color: var(--main-color);
     color: var(--secondary-color);

@@ -15,6 +15,7 @@ import HomePage from 'Pages/HomePage';
 import ProductListPage from 'Pages/ProductListPage';
 import SearchResultsPage from 'Pages/SearchResultsPage';
 import ProductDetailPage from 'Pages/ProductDetailPage';
+import ShoppingCartPage from 'Pages/ShoppingCartPage';
 
 
 function App() {
@@ -41,6 +42,9 @@ function App() {
           </Route>
           <Route path="/search" >
             <SearchResultsPage />
+          </Route>
+          <Route path="/cart" >
+            <ShoppingCartPage/>
           </Route>
         </Switch>
       </Content>

@@ -18,10 +18,12 @@ const Header = () =>{
             </Link>
             <div>
                 <SearchInput/>
-                <Cart
-                    alt="Go to review your cart"
-                    src={cartIcon}
-                />
+                <Link to="/cart">
+                    <Cart
+                        alt="Go to review your cart"
+                        src={cartIcon}
+                    />
+                </Link>
             </div>
         </HeaderStyles>
     );

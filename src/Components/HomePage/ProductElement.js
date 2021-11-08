@@ -1,8 +1,7 @@
 import React from 'react';
 import Button from 'Components/Button/Button';
 import { Link } from 'react-router-dom';
-
-import { ProductHoverButton, Article, Text, Name, SKU, ImageContainer } from './styled'
+import { ProductHoverButton, Article, Text, Name, SKU, ImageContainer } from './styled';
 
 const ProductElement = ({id, data, showCategory, showShortDescription}) => {
 
@@ -29,7 +28,7 @@ const ProductElement = ({id, data, showCategory, showShortDescription}) => {
             {showShortDescription ? <p>{short_description}</p>: null}
 
             <ProductHoverButton>
-                <Button>Add to cart</Button>
+                <Button propsForFunction={ data && {productId, data}}>Add to cart</Button>
                 <Link to={`/product/${productId}`}>
                     <Button>View details</Button>
                 </Link>

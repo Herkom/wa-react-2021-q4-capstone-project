@@ -5,3 +5,5 @@ export const URL_PARAMS = {
     searchTerm: '[[fulltext(document, "{searchTerm}")]]',
     productId: '[[:d=at(document.id,"{productId}")]]',
 };
+
+export const NUMBER_OF_PRODUCTS_TO_DISPLAY = 12;

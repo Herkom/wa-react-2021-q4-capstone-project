@@ -43,6 +43,6 @@ export function useFeaturedBanners( docType = null, pageSize = null, optional = 
       controller.abort();
     };
   }, [apiRef, isApiMetadataLoading, URL]);
-
+  
   return featuredBanners;
 }

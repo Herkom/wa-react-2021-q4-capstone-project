@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ShopCartState } from './Context/GlobalContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ShopCartState>
+      <App />
+    </ShopCartState>
   </React.StrictMode>,
   document.getElementById('root')
 );
