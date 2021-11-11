@@ -28,9 +28,6 @@ function App() {
           <Route exact path="/">
             <Redirect to="/home" />
           </Route>
-          <Route path="/wa-react-2021-q4-capstone-project/">
-            <Redirect to="/home" />
-          </Route>
           <Route path="/home">
             <HomePage />
           </Route>
