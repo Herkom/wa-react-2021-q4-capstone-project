@@ -95,13 +95,24 @@ export const QtyInput = styled.input`
     }
 `;
 
-export const QtyButton = styled.button`
+export const QtyButton = styled.p`
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: white;
     box-shadow: none;
     height: 50%;
     box-sizing: border-box;
     width: 1.5rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const QtyIcon = styled.img`
+    width: 1rem;
+    height: 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
 `;
 
 export const ProductStock = styled(ProductCategory)``;

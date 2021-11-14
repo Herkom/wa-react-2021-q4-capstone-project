@@ -1,15 +1,10 @@
 import React from 'react';
 
-import { useMyCartContext } from "Context/GlobalContext"
-
 import { StyledButton } from './styled';
 
-const Button = ({ children, propsForFunction }) => {
-    
-    const { addToMyCart } = useMyCartContext();
-
+const Button = ({ children, disabled, onClick }) => {
     return(
-        <StyledButton onClick={()=>{addToMyCart(propsForFunction?.productId, propsForFunction?.data)}} >
+        <StyledButton disabled={disabled} onClick={onClick} >
             {children}
         </StyledButton>
     );

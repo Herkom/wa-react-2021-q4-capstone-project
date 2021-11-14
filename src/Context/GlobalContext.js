@@ -1,37 +1,51 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 
 export const ShopCartContext = createContext({
     myCart: {},
     addToMyCart: () => {},
-    removeFromMyList: () => {},
+    removeFromCart: () => {},
+    total: 0,
 });
 
 export const ShopCartState = ({children}) =>{
     const [myCart, setMyCart] = useState({});
+    const [total, setTotal] = useState(0);
 
     const addToMyCart = (productId, productdata, qty = 1) => {
-        
         setMyCart( prevState => ({
             ...prevState,
             [productId]: {...productdata, qty}
         }));
     };
 
-    const removeFromMyList = (product) => {
-        if(!(product.id in myCart)) return
+    const removeFromCart = (id) => {
+        if(!(id in myCart)) return
 
         setMyCart( prevState => {
             const newState = {...prevState}
-            delete newState[product.id]
+            delete newState[id]
             return newState
         } )
     }
+    
+    useEffect(() => {
+
+        if(Object.entries(myCart).length > 0){
+            setTotal( 
+                Object.values(myCart)
+                .map(item => ( item.qty * item.price ) )
+                .reduce( (previousValue, currentValue) => previousValue + currentValue ).toFixed(2)
+            )            
+        };
+
+    }, [myCart])
 
     return(
         <ShopCartContext.Provider value={{
             myCart,
             addToMyCart,
-            removeFromMyList,
+            removeFromCart,
+            total
         }}>
             {children}
         </ShopCartContext.Provider>

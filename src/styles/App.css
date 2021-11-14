@@ -51,6 +51,8 @@ q:before, q:after {
 
 	--highlight-color: #e4986a;
 
+	--icon-color: rgb(33, 37, 41);
+
 	--main-font: 'DM Serif Display', serif;
 
 	--secondary-font: 'Mulish',sans-serif;

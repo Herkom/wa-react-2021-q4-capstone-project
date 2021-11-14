@@ -16,7 +16,7 @@ import ProductListPage from 'Pages/ProductListPage';
 import SearchResultsPage from 'Pages/SearchResultsPage';
 import ProductDetailPage from 'Pages/ProductDetailPage';
 import ShoppingCartPage from 'Pages/ShoppingCartPage';
-
+import CheckoutPage from 'Pages/CheckoutPage';
 
 function App() {
 
@@ -42,6 +42,9 @@ function App() {
           </Route>
           <Route path="/cart" >
             <ShoppingCartPage/>
+          </Route>
+          <Route path="/checkout" >
+            <CheckoutPage/>
           </Route>
         </Switch>
       </Content>

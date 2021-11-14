@@ -6,7 +6,7 @@ import leftArrow from 'assets/svgs/left-arrow.svg';
 
 const Paginator = ( { numberOfPages, next, prev, state, setStater } ) => {
     
-    const Pages = Array.from(Array(numberOfPages).keys());
+    const pages = Array.from(Array(numberOfPages).keys());
 
     const selectAPage = (page) => {
         setStater({
@@ -19,7 +19,7 @@ const Paginator = ( { numberOfPages, next, prev, state, setStater } ) => {
         <PaginatorContainer>
             <img alt={`${leftArrow}`} src={leftArrow} onClick={()=>prev()} />
             <ul>
-                {Pages.map( page => {
+                {pages.map( page => {
                     const index = page + 1;
                     return(
                         <li key={index} onClick={()=>selectAPage(index)}>

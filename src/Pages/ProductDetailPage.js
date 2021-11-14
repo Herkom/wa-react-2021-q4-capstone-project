@@ -1,5 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
+import { useMyCartContext } from "Context/GlobalContext";
 import { useParams } from "react-router";
+import up from "../assets/svgs/up.svg";
+import down from "../assets/svgs/down.svg";
 
 import {
     ProductDetailPageContainer,
@@ -15,6 +18,7 @@ import {
     QtyInputContainer,
     QtyInput,
     QtyButton,
+    QtyIcon,
     ProductStock,
     Specs,
     SpecsTitle,
@@ -30,11 +34,11 @@ import Button from "Components/Button/Button";
 const ProductDetailPage = () => {
 
     let {id} = useParams();
-    const result = useFeaturedBanners(null, null, "productId", id );
+    const {data, isLoading} = useFeaturedBanners(null, null, "productId", id );
+    const { addToMyCart } = useMyCartContext();
+    const [productsSelected, setProductsSelected] = useState(1);
 
-    if(!result.isLoading){
-
-        let productDetails = result.data.results[0];
+    if(!isLoading){ 
 
         const {
             description,
@@ -42,12 +46,32 @@ const ProductDetailPage = () => {
             name,
             price,
             sku,
-            specs,
             stock,
+            specs,
             category
-        } = productDetails.data;
+        } = data.results[0].data;
 
-        const tags = productDetails.tags;
+        const tags = data.results[0].tags;
+
+        const increaseNumber = () => {            
+            if (productsSelected < stock){
+                setProductsSelected( prevState => prevState + 1)
+            }
+        }
+    
+        const decreaseNumber = () => {
+            if(productsSelected !== 0){
+                setProductsSelected( prevState => prevState - 1)
+            }            
+        }
+
+        const action = stock === 0 ? null : () => { 
+            addToMyCart(id && id, data && data.results[0].data, productsSelected);
+        };
+
+        const changeHandler = (e) =>{
+            setProductsSelected(e.value)
+        }
 
         return(
             <>
@@ -61,7 +85,11 @@ const ProductDetailPage = () => {
                             <label><ProductPrice>$ {price}</ProductPrice></label>
                             <label><ProductSKU>SKU: {sku}</ProductSKU></label>
                         </MainDetails>
-                        <label><ProductCategory><strong>Category: </strong>{category.slug}</ProductCategory></label>
+                        <label>
+                            <ProductCategory>
+                                <strong>Category: </strong>{category.slug}
+                            </ProductCategory>
+                        </label>
                         <ProductTags>
                             <strong>Tags: </strong>
                             {tags.map(element => (
@@ -69,20 +97,21 @@ const ProductDetailPage = () => {
                             ))}
                         </ProductTags>
                         <ProductDescription>{description[0].text}</ProductDescription>
-
                         <AddToCartContainer>
                             <QtyInputContainer>
-                                <QtyInput type='number' required defaultValue='1'/>
+                                <QtyInput type='number' onChange={changeHandler} required value={productsSelected}/>
                                 <span>
-                                    <QtyButton/>
-                                    <QtyButton/>
+                                    <QtyButton onClick={increaseNumber}>
+                                        <QtyIcon alt='Increase product number' src={up}/>
+                                    </QtyButton>
+                                    <QtyButton onClick={decreaseNumber}>
+                                        <QtyIcon alt='Decrease product number' src={down}/>
+                                    </QtyButton>
                                 </span>
                             </QtyInputContainer>
-                            <Button>Add to Cart</Button>
+                            <Button disabled={stock === 0} onClick={ action }>Add to cart</Button>
                         </AddToCartContainer>
-
                         <label><ProductStock><strong>Stock: </strong>{stock}</ProductStock></label>
-
                         <Specs>
                             <thead>
                                 <tr>
@@ -103,12 +132,11 @@ const ProductDetailPage = () => {
                     </DetailsContainer>
                     
                 </ProductDetailPageContainer>
-                
             </>
         )
     }
 
-    return <p>Loading...</p>
+    return <div>Loading...</div>;
 };
 
 export default ProductDetailPage

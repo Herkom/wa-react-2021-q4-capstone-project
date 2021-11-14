@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { fontTypes } from "styles/baseFonts";
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.p`
     padding: 1rem 1.5rem;
-    background-color: var(--main-color);
+    background-color: ${ props => props.disabled ? 'gray' : 'var(--main-color)'};
     color: var(--secondary-color);
     border: none;
     text-align: center;
@@ -16,6 +16,7 @@ export const StyledButton = styled.button`
     ${ fontTypes.paragraph }
 
     &:hover{
-        background-color: var(--highlight-color);
+        background-color: ${ props => props.disabled ? 'gray' : 'var(--highlight-color)'};
+        cursor: ${ props => props.disabled ? 'not-allowed' : 'pointer'};
     }
 `;

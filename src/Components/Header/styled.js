@@ -44,11 +44,32 @@ export const LogoContainer = styled.div`
     }
 `;
 
-export const Cart = styled.img`
+export const CartContainer = styled.div`
+    width: 30px;
+    height: 30px;
+    position: relative;
+`;
+
+export const CartImage = styled.img`
     width: 30px;
     height: 30px;
     background-size: contain;
     background-repeat: no-repeat;
     cursor: pointer;
-    margin-left: 1rem;
+`;
+
+export const CartBadge = styled.p`
+    width: 20px;
+    height: 20px;
+    background-color: var(--highlight-color);
+    position: absolute;
+    border-radius: 50%;
+    right: -5px;
+    top: -5px;
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    ${ fontTypes.caption }
+    justify-content: center;
+    align-items: center;
+    display: none;
 `;
