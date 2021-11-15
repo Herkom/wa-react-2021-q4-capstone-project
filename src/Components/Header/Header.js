@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { HeaderStyles, LogoContainer, Cart } from './styled';
+import { HeaderStyles, LogoContainer } from './styled';
 
 import logo from 'assets/svgs/logo.svg';
-import cartIcon from 'assets/svgs/cart.svg';
+
 import SearchInput from '../SearchInput/SearchInput';
+import Cart from './Cart';
 
 const Header = () =>{
     return (
@@ -16,13 +17,10 @@ const Header = () =>{
                     <h1>Möbelhaus</h1>
                 </LogoContainer>
             </Link>
-            <div>
-                <SearchInput/>
-                <Cart
-                    alt="Go to review your cart"
-                    src={cartIcon}
-                />
-            </div>
+            <SearchInput/>
+            <Link to="/cart">
+                <Cart/>
+            </Link>
         </HeaderStyles>
     );
 };

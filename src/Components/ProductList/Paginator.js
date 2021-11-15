@@ -4,32 +4,31 @@ import { PaginatorContainer } from 'Components/ProductList/styled';
 import rightArrow from 'assets/svgs/right-arrow.svg';
 import leftArrow from 'assets/svgs/left-arrow.svg';
 
-const Paginator = ( props ) => {
+const Paginator = ( { numberOfPages, next, prev, state, setStater } ) => {
+    
+    const pages = Array.from(Array(numberOfPages).keys());
 
-    const { numberOfProducts, numberItemsInGroup } = props;
-
-    const numberOfPages = (products, items) => {
-        const pagesArray = [];
-        const pages = Math.ceil(products / items);
-        
-        for(let i = 1; i <= pages; i++){
-            pagesArray.push(i);
-        };
-
-        return pagesArray;
-    };
+    const selectAPage = (page) => {
+        setStater({
+            ...state,
+            currentPage: page
+        })
+    }
 
     return (
         <PaginatorContainer>
-            <img alt={`${leftArrow}`} src={leftArrow} />
+            <img alt={`${leftArrow}`} src={leftArrow} onClick={()=>prev()} />
             <ul>
-                {numberOfPages(numberOfProducts, numberItemsInGroup).map( page =>
-                    <li key={page}>
-                        <p>{page}</p>
-                    </li>
-                )}
+                {pages.map( page => {
+                    const index = page + 1;
+                    return(
+                        <li key={index} onClick={()=>selectAPage(index)}>
+                            <p>{index}</p>
+                        </li>
+                    )
+                })}
             </ul>
-            <img alt={`${rightArrow}`} src={rightArrow} />
+            <img alt={`${rightArrow}`} src={rightArrow} onClick={()=>next()} />
         </PaginatorContainer>
     )
 };

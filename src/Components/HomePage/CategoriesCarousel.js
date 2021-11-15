@@ -5,8 +5,6 @@ import CategoriesElement from './CategoriesElement';
 
 import CategoriesMock from 'mocks/en-us/product-categories.json';
 
-
-
 const CategoriesCarousel = () => {
     const [FetchedData, setFetchedData] = React.useState(null);
     const [error, setError] = React.useState(null);

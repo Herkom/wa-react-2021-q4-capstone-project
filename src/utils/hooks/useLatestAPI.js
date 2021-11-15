@@ -20,6 +20,7 @@ export function useLatestAPI() {
         //Esta declaración no me quedo muy clara
         //Se desestructura el objeto para solo tomar el valor de ref
         //pero no me queda claro como se consiguió
+        //creo que se le da un objeto vacío y un array vacío como valor por default
         const { refs: [{ ref } = {}] = [] } = await response.json();
         
         setApiMetadata({ ref, isLoading: false });

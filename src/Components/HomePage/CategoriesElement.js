@@ -2,7 +2,6 @@ import React from 'react';
 import { CategoryArticle, CategoryImageLink, CategoryTitle } from './styled';
 
 const CategoriesElement = ({ data }) => {
-
     const{
         name,
         main_image:{
@@ -27,4 +26,4 @@ const CategoriesElement = ({ data }) => {
     );
 };
 
-export default CategoriesElement
+export default React.memo(CategoriesElement)
