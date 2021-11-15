@@ -18,36 +18,40 @@ import ProductDetailPage from 'Pages/ProductDetailPage';
 import ShoppingCartPage from 'Pages/ShoppingCartPage';
 import CheckoutPage from 'Pages/CheckoutPage';
 
+import HandleError from 'utils/HandleError';
+
 function App() {
 
   return (
     <Router>
       <Header />
-      <Content>
-        <Switch>
-          <Route exact path="/">
-            <Redirect to="/home" />
-          </Route>
-          <Route path="/home">
-            <HomePage />
-          </Route>
-          <Route path="/products">
-            <ProductListPage />
-          </Route>
-          <Route path="/product/:id">
-            <ProductDetailPage />
-          </Route>
-          <Route path="/search" >
-            <SearchResultsPage />
-          </Route>
-          <Route path="/cart" >
-            <ShoppingCartPage/>
-          </Route>
-          <Route path="/checkout" >
-            <CheckoutPage/>
-          </Route>
-        </Switch>
-      </Content>
+      <HandleError message={`We're sorry, something went wrong`}>
+        <Content>
+          <Switch>
+            <Route exact path="/">
+              <Redirect to="/home" />
+            </Route>
+            <Route path="/home">
+              <HomePage />
+            </Route>
+            <Route path="/products">
+              <ProductListPage />
+            </Route>
+            <Route path="/product/:id">
+              <ProductDetailPage />
+            </Route>
+            <Route path="/search" >
+              <SearchResultsPage />
+            </Route>
+            <Route path="/cart" >
+              <ShoppingCartPage/>
+            </Route>
+            <Route path="/checkout" >
+              <CheckoutPage/>
+            </Route>
+          </Switch>
+        </Content>
+      </HandleError>
       <Footer />
     </Router>
   );

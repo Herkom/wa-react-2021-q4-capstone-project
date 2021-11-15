@@ -47,4 +47,4 @@ const ProductElement = ({id, data, showCategory, showShortDescription}) => {
     );
 };
 
-export default ProductElement
+export default React.memo(ProductElement)

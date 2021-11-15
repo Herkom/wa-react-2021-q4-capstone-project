@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 import {NUMBER_OF_PRODUCTS_TO_DISPLAY} from 'utils/constants';
 
@@ -36,7 +36,7 @@ export const useCategoriesFilter = () => {
         });
     };
 
-    const handleCheckboxChange = (event) => {
+    const handleCheckboxChange = useCallback( (event) => {
         const arrayOfchosedCategories = chosedCategories.items;
         const name = event.target.name.toLowerCase();
         console.log(event.target.name)
@@ -59,7 +59,7 @@ export const useCategoriesFilter = () => {
         setFilteredProducts({
             products: resultsFromTheFilter
         });
-    };
+    }, [] );
 
     const resetFilters = () => {
         setFilteredProducts({ products: [] });

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
 export const ShopCartContext = createContext({
     myCart: {},
@@ -11,14 +11,14 @@ export const ShopCartState = ({children}) =>{
     const [myCart, setMyCart] = useState({});
     const [total, setTotal] = useState(0);
 
-    const addToMyCart = (productId, productdata, qty = 1) => {
+    const addToMyCart = useCallback((productId, productdata, qty = 1) => {
         setMyCart( prevState => ({
             ...prevState,
             [productId]: {...productdata, qty}
         }));
-    };
+    }, []);
 
-    const removeFromCart = (id) => {
+    const removeFromCart = useCallback( (id) => {
         if(!(id in myCart)) return
 
         setMyCart( prevState => {
@@ -26,7 +26,7 @@ export const ShopCartState = ({children}) =>{
             delete newState[id]
             return newState
         } )
-    }
+    }, [myCart] );
     
     useEffect(() => {
 
