@@ -1,8 +1,8 @@
-import React, {useState} from "react";
-import { useMyCartContext } from "Context/GlobalContext";
-import { useParams } from "react-router";
-import up from "../assets/svgs/up.svg";
-import down from "../assets/svgs/down.svg";
+import React, { useState } from 'react'
+import { useMyCartContext } from 'Context/GlobalContext'
+import { useParams } from 'react-router'
+import up from '../assets/svgs/up.svg'
+import down from '../assets/svgs/down.svg'
 
 import {
     ProductDetailPageContainer,
@@ -24,22 +24,20 @@ import {
     SpecsTitle,
     Spec,
     SpecValue
-} from 'Components/ProductDetailPage/styled';
+} from 'Components/ProductDetailPage/styled'
 
-import { useFeaturedBanners } from "utils/hooks/useFeaturedBanners";
-import { BannerContainer } from "Components/HomePage/styled";
-import Slider from "Components/Slider/Slider";
-import Button from "Components/Button/Button";
+import { useFeaturedBanners } from 'utils/hooks/useFeaturedBanners'
+import { BannerContainer } from 'Components/HomePage/styled'
+import Slider from 'Components/Slider/Slider'
+import Button from 'Components/Button/Button'
 
 const ProductDetailPage = () => {
+    const { id } = useParams()
+    const { data, isLoading } = useFeaturedBanners(null, null, 'productId', id)
+    const { addToMyCart } = useMyCartContext()
+    const [productsSelected, setProductsSelected] = useState(1)
 
-    let {id} = useParams();
-    const {data, isLoading} = useFeaturedBanners(null, null, "productId", id );
-    const { addToMyCart } = useMyCartContext();
-    const [productsSelected, setProductsSelected] = useState(1);
-
-    if(!isLoading){ 
-
+    if (!isLoading) {
         const {
             description,
             images,
@@ -49,31 +47,33 @@ const ProductDetailPage = () => {
             stock,
             specs,
             category
-        } = data.results[0].data;
+        } = data.results[0].data
 
-        const tags = data.results[0].tags;
+        const tags = data.results[0].tags
 
-        const increaseNumber = () => {            
-            if (productsSelected < stock){
-                setProductsSelected( prevState => prevState + 1)
+        const increaseNumber = () => {
+            if (productsSelected < stock) {
+                setProductsSelected(prevState => prevState + 1)
             }
         }
-    
+
         const decreaseNumber = () => {
-            if(productsSelected !== 0){
-                setProductsSelected( prevState => prevState - 1)
-            }            
+            if (productsSelected !== 0) {
+                setProductsSelected(prevState => prevState - 1)
+            }
         }
 
-        const action = stock === 0 ? null : () => { 
-            addToMyCart(id && id, data && data.results[0].data, productsSelected);
-        };
+        const action = stock === 0
+            ? null
+            : () => {
+                addToMyCart(id && id, data && data.results[0].data, productsSelected)
+            }
 
-        const changeHandler = (e) =>{
+        const changeHandler = (e) => {
             setProductsSelected(e.value)
         }
 
-        return(
+        return (
             <>
                 <ProductDetailPageContainer>
                     <BannerContainer width={500} height={600}>
@@ -120,7 +120,7 @@ const ProductDetailPage = () => {
                             </thead>
                             <tbody>
                                 {
-                                    specs.map( element => (
+                                    specs.map(element => (
                                         <tr key={element.spec_name}>
                                             <Spec>{element.spec_name}</Spec>
                                             <SpecValue>{element.spec_value}</SpecValue>
@@ -130,13 +130,13 @@ const ProductDetailPage = () => {
                             </tbody>
                         </Specs>
                     </DetailsContainer>
-                    
+
                 </ProductDetailPageContainer>
             </>
         )
     }
 
-    return <div>Loading...</div>;
-};
+    return <div>Loading...</div>
+}
 
 export default ProductDetailPage

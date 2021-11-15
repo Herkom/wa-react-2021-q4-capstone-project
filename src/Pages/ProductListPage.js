@@ -1,15 +1,13 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react';
-import { H1Header, ProductContainer, ProductListSection, CategoriesContainer,  } from 'Components/ProductList/styled';
-import ProductElement from 'Components/HomePage/ProductElement';
-import ProductSkeleton from 'Components/ProductList/ProductSkeleton';
-import Paginator from 'Components/ProductList/Paginator';
+import React, { useEffect } from 'react'
+import { H1Header, ProductContainer, ProductListSection, CategoriesContainer } from 'Components/ProductList/styled'
+import ProductElement from 'Components/HomePage/ProductElement'
+import ProductSkeleton from 'Components/ProductList/ProductSkeleton'
+import Paginator from 'Components/ProductList/Paginator'
 
-import { useCategoriesFilter} from 'utils/hooks/useCategoriesFilter';
-import { usePager } from 'utils/hooks/usePager';
+import { useCategoriesFilter } from 'utils/hooks/useCategoriesFilter'
+import { usePager } from 'utils/hooks/usePager'
 
 const ProductListPage = () => {
-    
     const {
         pager,
         setPager,
@@ -18,8 +16,8 @@ const ProductListPage = () => {
         nextPage,
         prevPage,
         currentPage
-    } = usePager();
-    
+    } = usePager()
+
     const {
         handleCheckboxChange,
         resetFilters,
@@ -30,10 +28,10 @@ const ProductListPage = () => {
         areCategoriesLoaded,
         allProducts,
         areProductsLoaded
-    } = useCategoriesFilter();
-    
-    useEffect(()=>{
-        if(!areProductsLoaded){
+    } = useCategoriesFilter()
+
+    useEffect(() => {
+        if (!areProductsLoaded) {
             const trimStart = (currentPage - 1) * numberPerPage
             const trimEnd = trimStart + numberPerPage
 
@@ -41,25 +39,25 @@ const ProductListPage = () => {
                 products: allProducts.slice(trimStart, trimEnd)
             })
         }
-    }, [currentPage]);
+    }, [areProductsLoaded, currentPage])
 
-    const filterProds = !areProductsLoaded ?
-                            filteredProducts.products.map((item,index) => {
-                                return(
-                                <li key={index}>
-                                    <ProductElement showCategory {...item} />
-                                </li>
-                                )
-                            })
-                        : filteredProducts.products.map( (item, index) => {
-                            return(
-                                <li key={index}>
-                                    <ProductSkeleton/>
-                                </li>
-                            )
-                        })
+    const filterProds = !areProductsLoaded
+        ? filteredProducts.products.map((item, index) => {
+            return (
+                <li key={index}>
+                    <ProductElement showCategory {...item} />
+                </li>
+            )
+        })
+        : filteredProducts.products.map((item, index) => {
+            return (
+                <li key={index}>
+                    <ProductSkeleton/>
+                </li>
+            )
+        })
 
-    return(
+    return (
         <>
             <H1Header>This is the Product List Page</H1Header>
             <ProductListSection>
@@ -79,7 +77,7 @@ const ProductListPage = () => {
                             </ul>
                     }
                     {
-                        showResetButton && <input type="reset" value="Clear filters" onClick={()=>resetFilters()}/>
+                        showResetButton && <input type="reset" value="Clear filters" onClick={ () => resetFilters()}/>
                     }
                 </CategoriesContainer>
                 <ProductContainer>
@@ -89,6 +87,6 @@ const ProductListPage = () => {
             </ProductListSection>
         </>
     )
-};
+}
 
 export default ProductListPage

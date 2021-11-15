@@ -1,41 +1,41 @@
-import { useState, useEffect } from 'react';
-import { API_BASE_URL } from '../constants';
+import { useState, useEffect } from 'react'
+import { API_BASE_URL } from '../constants'
 
-const INITIAL_API_METADATA = { ref: null, isLoading: true };
+const INITIAL_API_METADATA = { ref: null, isLoading: true }
 
-export function useLatestAPI() {
-  const [apiMetadata, setApiMetadata] = useState(() => INITIAL_API_METADATA);
+export function useLatestAPI () {
+    const [apiMetadata, setApiMetadata] = useState(() => INITIAL_API_METADATA)
 
-  useEffect(() => {
-    const controller = new AbortController();
+    useEffect(() => {
+        const controller = new AbortController()
 
-    async function getAPIMetadata() {
-      try {
-        setApiMetadata(INITIAL_API_METADATA);
+        async function getAPIMetadata () {
+            try {
+                setApiMetadata(INITIAL_API_METADATA)
 
-        const response = await fetch(API_BASE_URL, {
-          signal: controller.signal,
-        });
+                const response = await fetch(API_BASE_URL, {
+                    signal: controller.signal
+                })
 
-        //Esta declaración no me quedo muy clara
-        //Se desestructura el objeto para solo tomar el valor de ref
-        //pero no me queda claro como se consiguió
-        //creo que se le da un objeto vacío y un array vacío como valor por default
-        const { refs: [{ ref } = {}] = [] } = await response.json();
-        
-        setApiMetadata({ ref, isLoading: false });
-      } catch (err) {
-        setApiMetadata({ ref: null, isLoading: false });
-        console.error(err);
-      }
-    }
+                // Esta declaración no me quedo muy clara
+                // Se desestructura el objeto para solo tomar el valor de ref
+                // pero no me queda claro como se consiguió
+                // creo que se le da un objeto vacío y un array vacío como valor por default
+                const { refs: [{ ref } = {}] = [] } = await response.json()
 
-    getAPIMetadata();
+                setApiMetadata({ ref, isLoading: false })
+            } catch (err) {
+                setApiMetadata({ ref: null, isLoading: false })
+                console.error(err)
+            }
+        }
 
-    return () => {
-      controller.abort();
-    };
-  }, []);
+        getAPIMetadata()
 
-  return apiMetadata;
+        return () => {
+            controller.abort()
+        }
+    }, [])
+
+    return apiMetadata
 }

@@ -1,5 +1,5 @@
-import { useMyCartContext } from "Context/GlobalContext";
-import deleteIcon from 'assets/svgs/delete.svg';
+import { useMyCartContext } from 'Context/GlobalContext'
+import deleteIcon from 'assets/svgs/delete.svg'
 
 import {
     ShoppingCartSection,
@@ -9,16 +9,16 @@ import {
     ShoppingCartProdImage,
     ShoppingCartDataCell,
     ShoppingCartRemoveArticle
-} from 'Components/ShoppingCartPage/styled';
-import { Link } from "react-router-dom";
-import Button from "Components/Button/Button";
+} from 'Components/ShoppingCartPage/styled'
+import { Link } from 'react-router-dom'
+import Button from 'Components/Button/Button'
+import React from 'react'
 
 const ShoppingCartPage = () => {
-
-    const {myCart, removeFromCart, total} = useMyCartContext();
+    const { myCart, removeFromCart, total } = useMyCartContext()
 
     return (
-        <>
+        <React.Fragment>
             <ShoppingCartSection>
                 <ShoppingCartHeader>Shopping Cart Page</ShoppingCartHeader>
                 <table>
@@ -45,10 +45,10 @@ const ShoppingCartPage = () => {
                                 <ShoppingCartDataCell>$ {product.price}</ShoppingCartDataCell>
                                 <ShoppingCartDataCell>$ {product.price * product.qty}</ShoppingCartDataCell>
                                 <ShoppingCartDataCell>
-                                    <ShoppingCartRemoveArticle onClick={()=> removeFromCart(id)} alt="Delete article from the cart" src={deleteIcon}/>
+                                    <ShoppingCartRemoveArticle onClick={ () => removeFromCart(id)} alt='Delete article from the cart' src={deleteIcon}/>
                                 </ShoppingCartDataCell>
                             </ShoppingCartRow>
-                        ))}                    
+                        ))}
                     </tbody>
                     <tfoot>
                         <tr>
@@ -62,11 +62,11 @@ const ShoppingCartPage = () => {
                     </tfoot>
                 </table>
 
-                <Link to="/checkout">
+                <Link to='/checkout'>
                     <Button>Proceed to checkout</Button>
                 </Link>
             </ShoppingCartSection>
-        </>
+        </React.Fragment>
     )
 }
 

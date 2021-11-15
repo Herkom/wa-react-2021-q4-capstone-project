@@ -1,19 +1,19 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-import searchIcon from 'assets/svgs/search.svg';
+import searchIcon from 'assets/svgs/search.svg'
 
 export const SearchInputForm = styled.form`
+    align-items: center;
     border: 1px solid #ccc;
     display: flex;
-    align-items: center;
 
     input{
         background: transparent none repeat scroll 0 0;
-        padding: 9px 50px 9px 10px;
         border: medium none;
-        height: 20px;
         color: #666666;
+        height: 20px;
         outline: medium none;
+        padding: 9px 50px 9px 10px;
 
         @media (max-width: 600px){
             height: 30px;
@@ -25,11 +25,11 @@ export const SearchInputForm = styled.form`
     button{
         background: url(${searchIcon}) no-repeat;
         background-size: 1rem;
-        width: 1rem;
-        height: 1rem;
         border: none;
-        margin-right: 10px;
         cursor: pointer;
+        height: 1rem;
+        margin-right: 10px;
+        width: 1rem;
     }
 
-`;
+`

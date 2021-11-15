@@ -1,13 +1,19 @@
-import React from 'react';
-
-import { StyledButton } from './styled';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { StyledButton } from './styled'
 
 const Button = ({ children, disabled, onClick }) => {
-    return(
+    return (
         <StyledButton disabled={disabled} onClick={onClick} >
             {children}
         </StyledButton>
-    );
-};
+    )
+}
+
+Button.propTypes = {
+    children: PropTypes.node,
+    disabled: PropTypes.bool,
+    onClick: PropTypes.func
+}
 
 export default React.memo(Button)

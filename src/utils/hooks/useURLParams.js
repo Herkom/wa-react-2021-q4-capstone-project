@@ -1,12 +1,11 @@
-import { URL_PARAMS } from "utils/constants";
+import { URL_PARAMS } from 'utils/constants'
 
-export function useURLParams(optional, optValue){
+export function useURLParams (optional, optValue) {
+    let selected = URL_PARAMS[optional]
 
-    let selected = URL_PARAMS[optional];
-
-    if(optValue){
-        selected = selected.replace(`{${optional}}`, optValue);
+    if (optValue) {
+        selected = selected.replace(`{${optional}}`, optValue)
     }
 
-    return selected;
-};
+    return selected
+}

@@ -1,4 +1,4 @@
 const getPathname = () =>
-    window.location.pathname || '/';
+    window.location.pathname || '/'
 
-export default getPathname;
+export default getPathname

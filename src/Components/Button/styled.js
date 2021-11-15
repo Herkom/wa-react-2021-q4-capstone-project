@@ -1,22 +1,22 @@
-import styled from "styled-components";
-import { fontTypes } from "styles/baseFonts";
+import styled from 'styled-components'
+import { fontTypes } from 'styles/baseFonts'
 
 export const StyledButton = styled.p`
-    padding: 1rem 1.5rem;
-    background-color: ${ props => props.disabled ? 'gray' : 'var(--main-color)'};
-    color: var(--secondary-color);
+    background-color: ${props => props.disabled ? 'gray' : 'var(--main-color)'};
     border: none;
-    text-align: center;
-    margin: 2rem 0;
+    color: var(--secondary-color);
     cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    transition: all .5s ease;
     font-family: var(--secondary-font);
-    ${ fontTypes.paragraph }
+    letter-spacing: 1.5px;
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all .5s ease;
+    ${fontTypes.paragraph}
 
     &:hover{
-        background-color: ${ props => props.disabled ? 'gray' : 'var(--highlight-color)'};
-        cursor: ${ props => props.disabled ? 'not-allowed' : 'pointer'};
+        background-color: ${props => props.disabled ? 'gray' : 'var(--highlight-color)'};
+        cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
     }
-`;
+`
