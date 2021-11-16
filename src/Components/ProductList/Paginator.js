@@ -22,7 +22,7 @@ const Paginator = ({ numberOfPages, next, prev, state, setStater }) => {
                 {pages.map(page => {
                     const index = page + 1
                     return (
-                        <li key={index} onClick={() => selectAPage(index)}>
+                        <li data-testid='paginator-page' key={index} onClick={() => selectAPage(index)}>
                             <p>{index}</p>
                         </li>
                     )

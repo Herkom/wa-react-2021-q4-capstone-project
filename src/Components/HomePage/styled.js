@@ -111,13 +111,15 @@ export const CategoryTitle = styled.h3`
 
 export const ProductHoverButton = styled.div`
     align-items: center;
-    background-color: rgba(100, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
     display: flex;
     flex-direction: column;
     height: 0%;
     justify-content: center;
+    opacity: 0;
     position: absolute;
-    width: 0%;
+    transition: all 0.5s ease;
+    width: 100%;
 `
 
 export const Article = styled.article`
@@ -136,7 +138,7 @@ export const Article = styled.article`
 
     &:hover ${ProductHoverButton}{
         height: 100%;
-        width: 100%;
+        opacity: 1;
     }
 `
 

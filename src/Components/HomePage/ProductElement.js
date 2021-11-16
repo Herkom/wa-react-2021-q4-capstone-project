@@ -32,7 +32,7 @@ const ProductElement = ({ id, data, showCategory, showShortDescription }) => {
         }
 
     return (
-        <Article>
+        <Article data-testid='featured-product'>
             {showCategory && <Text>{category.slug}</Text>}
             <ImageContainer>
                 <img alt={mainimage.alt} src={mainimage.url}/>

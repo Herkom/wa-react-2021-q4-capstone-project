@@ -23,8 +23,8 @@ import HandleError from 'utils/HandleError'
 function App () {
     return (
         <Router>
-            <Header />
             <HandleError message={"We're sorry, something went wrong"}>
+                <Header />
                 <Content>
                     <Switch>
                         <Route exact path="/">
@@ -50,8 +50,8 @@ function App () {
                         </Route>
                     </Switch>
                 </Content>
+                <Footer />
             </HandleError>
-            <Footer />
         </Router>
     )
 }

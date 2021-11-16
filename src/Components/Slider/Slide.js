@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import { SlideItem, InfoContainer, Header, Description } from './styled'
 
-const Slide = ({ width, ...props }) => {
+const Slide = ({ id, width, ...props }) => {
     if (props.data) {
         const {
             title,
@@ -24,7 +24,7 @@ const Slide = ({ width, ...props }) => {
 
         return (
             // I've just find out that SlideItem returns a li instead of a img tag
-            <SlideItem width={width} >
+            <SlideItem data-testid='featured-banner' width={width} >
                 <img alt={title} src={main_image.url}/>
                 <InfoContainer>
                     <Header>{title.toLowerCase()}</Header>
@@ -45,6 +45,7 @@ const Slide = ({ width, ...props }) => {
 }
 
 Slide.propTypes = {
+    id: PropTypes.string,
     width: PropTypes.number,
     data: PropTypes.shape({
         title: PropTypes.string,

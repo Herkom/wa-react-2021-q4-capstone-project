@@ -43,6 +43,7 @@ export const usePager = () => {
                 numberOfPages: Math.ceil(allProducts.length / numberPerPage)
             })
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [areProductsLoaded])
 
     return { pager, setPager, numberPerPage, currentPage, numberOfPages, nextPage, prevPage }

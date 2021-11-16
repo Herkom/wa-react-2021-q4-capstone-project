@@ -11,6 +11,9 @@ class HandleError extends React.Component {
     }
 
     static getDerivedStateFromError (error) {
+        if (error) {
+            console.log(error.stack)
+        }
         return { hasError: true }
     }
 

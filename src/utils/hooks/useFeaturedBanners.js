@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
-import { useLatestAPI } from './useLatestAPI'
+// import { useLatestAPI } from './useLatestAPI'
 import { useURLMaker } from './useURLMaker'
+import { apiRef } from 'utils/constants'
 
 export function useFeaturedBanners (docType = null, pageSize = null, optional = null, optValue = null) {
-    const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI()
+    // const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI()
 
     const [featuredBanners, setFeaturedBanners] = useState(() => ({
         data: {},
@@ -13,7 +14,7 @@ export function useFeaturedBanners (docType = null, pageSize = null, optional = 
     const URL = useURLMaker(apiRef, docType, pageSize, optional, optValue)
 
     useEffect(() => {
-        if (!apiRef || isApiMetadataLoading) {
+        if (!apiRef /* || isApiMetadataLoading */) {
             return () => {}
         }
 
@@ -42,7 +43,7 @@ export function useFeaturedBanners (docType = null, pageSize = null, optional = 
         return () => {
             controller.abort()
         }
-    }, [apiRef, isApiMetadataLoading, URL])
+    }, [/* apiRef, isApiMetadataLoading, */URL])
 
     return featuredBanners
 }

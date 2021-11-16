@@ -7,3 +7,5 @@ export const URL_PARAMS = {
 }
 
 export const NUMBER_OF_PRODUCTS_TO_DISPLAY = 12
+
+export const apiRef = 'YXc6vhIAACsAyYIc'

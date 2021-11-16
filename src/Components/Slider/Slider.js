@@ -62,7 +62,7 @@ const Slider = ({ width = getWidth(), height, items }) => {
                 className={'SliderContent'}
             >
                 {items.map((_slide, i) => {
-                    return <Slide width={getWidth()} key={`${_slide.id}${i}`} {..._slide} />
+                    return <Slide id={i} width={getWidth()} key={`${_slide.id}${i}`} {..._slide} />
                 })}
             </SliderContainer>
 

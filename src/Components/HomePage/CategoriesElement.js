@@ -16,7 +16,7 @@ const CategoriesElement = ({ data }) => {
     } = data
 
     return (
-        <CategoryArticle>
+        <CategoryArticle data-testid='featured-category'>
             <CategoryImageLink>
                 <img alt={alt} src={url}/>
             </CategoryImageLink>

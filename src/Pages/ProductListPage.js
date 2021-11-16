@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react'
 import { H1Header, ProductContainer, ProductListSection, CategoriesContainer } from 'Components/ProductList/styled'
 import ProductElement from 'Components/HomePage/ProductElement'
@@ -69,7 +70,7 @@ const ProductListPage = () => {
                                 {Categories.results.map(item => (
                                     <li key={item.id}>
                                         <label>
-                                            <input name={item.data.name} type='checkbox' onClick={handleCheckboxChange}/>
+                                            <input data-testid='filter-category' name={item.data.name} type='checkbox' onClick={handleCheckboxChange}/>
                                             {item.data.name}
                                         </label>
                                     </li>
