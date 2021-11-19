@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react'
+import React from 'react'
 import { H1Header, ProductContainer, ProductListSection, CategoriesContainer } from 'Components/ProductList/styled'
 import ProductElement from 'Components/HomePage/ProductElement'
 import ProductSkeleton from 'Components/ProductList/ProductSkeleton'
@@ -12,37 +11,23 @@ const ProductListPage = () => {
     const {
         pager,
         setPager,
-        numberPerPage,
         numberOfPages,
         nextPage,
-        prevPage,
-        currentPage
+        prevPage
     } = usePager()
 
     const {
         handleCheckboxChange,
         resetFilters,
-        setFilteredProducts,
         showResetButton,
         filteredProducts,
         Categories,
         areCategoriesLoaded,
-        allProducts,
         areProductsLoaded
     } = useCategoriesFilter()
 
-    useEffect(() => {
-        if (!areProductsLoaded) {
-            const trimStart = (currentPage - 1) * numberPerPage
-            const trimEnd = trimStart + numberPerPage
-
-            setFilteredProducts({
-                products: allProducts.slice(trimStart, trimEnd)
-            })
-        }
-    }, [areProductsLoaded, currentPage])
-
-    const filterProds = !areProductsLoaded
+    // Not sure if if this what Victor was referring to on the PR comment
+    const loadedProducts = !areProductsLoaded
         ? filteredProducts.products.map((item, index) => {
             return (
                 <li key={index}>
@@ -78,11 +63,11 @@ const ProductListPage = () => {
                             </ul>
                     }
                     {
-                        showResetButton && <input type="reset" value="Clear filters" onClick={ () => resetFilters()}/>
+                        showResetButton && <input type="reset" value="Clear filters" onClick={resetFilters}/>
                     }
                 </CategoriesContainer>
                 <ProductContainer>
-                    { filterProds }
+                    { loadedProducts }
                 </ProductContainer>
                 <Paginator numberOfPages={numberOfPages} next={nextPage} prev={prevPage} state={pager} setStater={setPager}/>
             </ProductListSection>

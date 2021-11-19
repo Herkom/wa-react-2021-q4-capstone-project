@@ -5,9 +5,13 @@ import { PaginatorContainer } from 'Components/ProductList/styled'
 import rightArrow from 'assets/svgs/right-arrow.svg'
 import leftArrow from 'assets/svgs/left-arrow.svg'
 
+// import { selectAPage } from 'utils/hooks/usePager'
+
 const Paginator = ({ numberOfPages, next, prev, state, setStater }) => {
     const pages = Array.from(Array(numberOfPages).keys())
 
+    // Can't find out why I was getting this error:
+    // Attempted import error: 'selectAPage' is not exported from 'utils/hooks/usePager'
     const selectAPage = (page) => {
         setStater({
             ...state,

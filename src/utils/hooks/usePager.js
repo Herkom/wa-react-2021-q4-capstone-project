@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react'
 import { NUMBER_OF_PRODUCTS_TO_DISPLAY } from 'utils/constants'
 
@@ -6,7 +7,8 @@ import { useCategoriesFilter } from 'utils/hooks/useCategoriesFilter'
 export const usePager = () => {
     const {
         allProducts,
-        areProductsLoaded
+        areProductsLoaded,
+        setFilteredProducts
     } = useCategoriesFilter()
 
     const [pager, setPager] = useState({
@@ -35,6 +37,13 @@ export const usePager = () => {
         })
     }
 
+    const selectAPage = (page) => {
+        setPager({
+            ...pager,
+            currentPage: page
+        })
+    }
+
     useEffect(() => {
         if (!areProductsLoaded) {
             setPager({
@@ -46,5 +55,16 @@ export const usePager = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [areProductsLoaded])
 
-    return { pager, setPager, numberPerPage, currentPage, numberOfPages, nextPage, prevPage }
+    useEffect(() => {
+        if (!areProductsLoaded) {
+            const trimStart = (currentPage - 1) * numberPerPage
+            const trimEnd = trimStart + numberPerPage
+
+            setFilteredProducts({
+                products: allProducts.slice(trimStart, trimEnd)
+            })
+        }
+    }, [currentPage])
+
+    return { selectAPage, pager, setPager, numberPerPage, currentPage, numberOfPages, nextPage, prevPage }
 }

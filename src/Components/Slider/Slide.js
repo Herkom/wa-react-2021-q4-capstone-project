@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 
 import { SlideItem, InfoContainer, Header, Description } from './styled'
 
-const Slide = ({ id, width, ...props }) => {
-    if (props.data) {
+const Slide = ({ width, data, image }) => {
+    if (data) {
         const {
             title,
             // Not sure if in the next two cases it's ok to disable the eslint rule
@@ -15,7 +15,7 @@ const Slide = ({ id, width, ...props }) => {
             ],
             // eslint-disable-next-line camelcase
             main_image
-        } = props.data
+        } = data
 
         // Shoul I just leave de slice???
         const productDescription = text.length > 30
@@ -39,13 +39,12 @@ const Slide = ({ id, width, ...props }) => {
 
     return (
         <SlideItem width={width}>
-            <img alt={props.image.url} src={props.image.url}/>
+            <img alt={image.url} src={image.url}/>
         </SlideItem>
     )
 }
 
 Slide.propTypes = {
-    id: PropTypes.string,
     width: PropTypes.number,
     data: PropTypes.shape({
         title: PropTypes.string,
@@ -53,7 +52,7 @@ Slide.propTypes = {
             url: PropTypes.string
         })
     }),
-    image: PropTypes.string,
+    image: PropTypes.object,
     description: PropTypes.array
 }
 

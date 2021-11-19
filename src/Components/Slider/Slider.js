@@ -7,14 +7,7 @@ import Slide from './Slide'
 import Arrow from './Arrow'
 import Dots from './Dots'
 
-// Thanks to Victor recommendation
-// I'm thinking about changing it to just get the width of the parent element
-const getWidth = () => window.innerWidth
-
-/**
- * @function Slider
- */
-const Slider = ({ width = getWidth(), height, items }) => {
+const Slider = ({ width = window.innerWidth, height, items }) => {
     const totalNumberOfSlides = items.length - 1
 
     const [state, setState] = useState({
@@ -62,7 +55,7 @@ const Slider = ({ width = getWidth(), height, items }) => {
                 className={'SliderContent'}
             >
                 {items.map((_slide, i) => {
-                    return <Slide id={i} width={getWidth()} key={`${_slide.id}${i}`} {..._slide} />
+                    return <Slide width={width} key={`${_slide.id}${i}`} {..._slide} />
                 })}
             </SliderContainer>
 

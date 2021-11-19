@@ -38,6 +38,8 @@ const ProductDetailPage = () => {
     const [productsSelected, setProductsSelected] = useState(1)
 
     if (!isLoading) {
+        const productDetails = data.results[0]
+
         const {
             description,
             images,
@@ -47,9 +49,9 @@ const ProductDetailPage = () => {
             stock,
             specs,
             category
-        } = data.results[0].data
+        } = productDetails.data
 
-        const tags = data.results[0].tags
+        const tags = productDetails.tags
 
         const increaseNumber = () => {
             if (productsSelected < stock) {
