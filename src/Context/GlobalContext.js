@@ -1,46 +1,45 @@
-import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react'
+import PropTypes from 'prop-types'
 
 export const ShopCartContext = createContext({
     myCart: {},
     addToMyCart: () => {},
     removeFromCart: () => {},
-    total: 0,
-});
+    total: 0
+})
 
-export const ShopCartState = ({children}) =>{
-    const [myCart, setMyCart] = useState({});
-    const [total, setTotal] = useState(0);
+export const ShopCartState = ({ children }) => {
+    const [myCart, setMyCart] = useState({})
+    const [total, setTotal] = useState(0)
 
     const addToMyCart = useCallback((productId, productdata, qty = 1) => {
-        setMyCart( prevState => ({
+        setMyCart(prevState => ({
             ...prevState,
-            [productId]: {...productdata, qty}
-        }));
-    }, []);
+            [productId]: { ...productdata, qty }
+        }))
+    }, [])
 
-    const removeFromCart = useCallback( (id) => {
-        if(!(id in myCart)) return
+    const removeFromCart = useCallback((id) => {
+        if (!(id in myCart)) return
 
-        setMyCart( prevState => {
-            const newState = {...prevState}
+        setMyCart(prevState => {
+            const newState = { ...prevState }
             delete newState[id]
             return newState
-        } )
-    }, [myCart] );
-    
-    useEffect(() => {
-
-        if(Object.entries(myCart).length > 0){
-            setTotal( 
-                Object.values(myCart)
-                .map(item => ( item.qty * item.price ) )
-                .reduce( (previousValue, currentValue) => previousValue + currentValue ).toFixed(2)
-            )            
-        };
-
+        })
     }, [myCart])
 
-    return(
+    useEffect(() => {
+        if (Object.entries(myCart).length > 0) {
+            setTotal(
+                Object.values(myCart)
+                    .map(item => (item.qty * item.price))
+                    .reduce((previousValue, currentValue) => previousValue + currentValue).toFixed(2)
+            )
+        }
+    }, [myCart])
+
+    return (
         <ShopCartContext.Provider value={{
             myCart,
             addToMyCart,
@@ -52,4 +51,8 @@ export const ShopCartState = ({children}) =>{
     )
 }
 
-export const useMyCartContext = () => useContext(ShopCartContext);
+ShopCartState.propTypes = {
+    children: PropTypes.node
+}
+
+export const useMyCartContext = () => useContext(ShopCartContext)

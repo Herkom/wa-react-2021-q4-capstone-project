@@ -1,10 +1,11 @@
-import React from 'react';
-import { CategoryArticle, CategoryImageLink, CategoryTitle } from './styled';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { CategoryArticle, CategoryImageLink, CategoryTitle } from './styled'
 
 const CategoriesElement = ({ data }) => {
-    const{
+    const {
         name,
-        main_image:{
+        main_image: {
             /* dimensions:{
                 width,
                 height,
@@ -12,10 +13,10 @@ const CategoriesElement = ({ data }) => {
             alt,
             url
         }
-    } = data; 
+    } = data
 
-    return(
-        <CategoryArticle>
+    return (
+        <CategoryArticle data-testid='featured-category'>
             <CategoryImageLink>
                 <img alt={alt} src={url}/>
             </CategoryImageLink>
@@ -23,7 +24,15 @@ const CategoriesElement = ({ data }) => {
                 {name}
             </CategoryTitle>
         </CategoryArticle>
-    );
-};
+    )
+}
+
+CategoriesElement.propTypes = {
+    data: PropTypes.object,
+    name: PropTypes.string,
+    main_image: PropTypes.object,
+    alt: PropTypes.string,
+    url: PropTypes.string
+}
 
 export default React.memo(CategoriesElement)

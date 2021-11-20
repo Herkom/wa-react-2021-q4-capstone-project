@@ -1,48 +1,49 @@
-import { useState, useEffect } from 'react';
-import { useLatestAPI } from './useLatestAPI';
-import { useURLMaker } from './useURLMaker';
+import { useState, useEffect } from 'react'
+import { useLatestAPI } from './useLatestAPI'
+import { useURLMaker } from './useURLMaker'
+// import { apiRef } from 'utils/constants'
 
-export function useFeaturedBanners( docType = null, pageSize = null, optional = null, optValue = null ) {
-  const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
-  
-  const [featuredBanners, setFeaturedBanners] = useState(() => ({
-    data: {},
-    isLoading: true,
-  }));
- 
-  const URL = useURLMaker( apiRef, docType, pageSize, optional, optValue );
+export function useFeaturedBanners (docType = null, pageSize = null, optional = null, optValue = null) {
+    const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI()
 
-  useEffect(() => {
-    if (!apiRef || isApiMetadataLoading) {
-      return () => {};
-    }
+    const [featuredBanners, setFeaturedBanners] = useState(() => ({
+        data: {},
+        isLoading: true
+    }))
 
-    const controller = new AbortController();
+    const URL = useURLMaker(apiRef, docType, pageSize, optional, optValue)
 
-    async function getFeaturedBanners() {
-      try {
-        setFeaturedBanners({ data: {}, isLoading: true });
-        
-        const response = await fetch(
-          URL, {
-            signal: controller.signal,
-          }
-        );
-        const data = await response.json();
+    useEffect(() => {
+        if (!apiRef || isApiMetadataLoading) {
+            return () => {}
+        }
 
-        setFeaturedBanners({ data, isLoading: false });
-      } catch (err) {
-        setFeaturedBanners({ data: {}, isLoading: false });
-        console.error(err);
-      }
-    }
+        const controller = new AbortController()
 
-    getFeaturedBanners();
+        async function getFeaturedBanners () {
+            try {
+                setFeaturedBanners({ data: {}, isLoading: true })
 
-    return () => {
-      controller.abort();
-    };
-  }, [apiRef, isApiMetadataLoading, URL]);
-  
-  return featuredBanners;
+                const response = await fetch(
+                    URL, {
+                        signal: controller.signal
+                    }
+                )
+                const data = await response.json()
+
+                setFeaturedBanners({ data, isLoading: false })
+            } catch (err) {
+                setFeaturedBanners({ data: {}, isLoading: false })
+                console.error(err)
+            }
+        }
+
+        getFeaturedBanners()
+
+        return () => {
+            controller.abort()
+        }
+    }, [apiRef, isApiMetadataLoading, URL])
+
+    return featuredBanners
 }

@@ -1,20 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import { HeaderStyles, LogoContainer } from './styled';
+import { HeaderStyles, LogoContainer, LogoImage, BrandName } from './styled'
 
-import logo from 'assets/svgs/logo.svg';
+import logo from 'assets/svgs/logo.svg'
 
-import SearchInput from '../SearchInput/SearchInput';
-import Cart from './Cart';
+import SearchInput from '../SearchInput/SearchInput'
+import Cart from './Cart'
 
-const Header = () =>{
+const Header = () => {
     return (
         <HeaderStyles>
             <Link to="/">
                 <LogoContainer>
-                    <img src={logo} alt='logo'/>
-                    <h1>Möbelhaus</h1>
+                    <LogoImage src={logo} alt='logo'/>
+                    <BrandName>Möbelhaus</BrandName>
                 </LogoContainer>
             </Link>
             <SearchInput/>
@@ -22,7 +22,7 @@ const Header = () =>{
                 <Cart/>
             </Link>
         </HeaderStyles>
-    );
-};
+    )
+}
 
 export default Header

@@ -1,75 +1,67 @@
-import styled from 'styled-components';
-import { fontTypes } from "styles/baseFonts";
+import styled from 'styled-components'
+import { fontTypes } from 'styles/baseFonts'
 
 export const HeaderStyles = styled.header`
+    align-items: center;
     display: flex;
     justify-content: space-around;
-    align-items: center;
     padding: 1rem 0;
 
     @media (max-width: 600px){
         flex-direction: column;
     }
-
-    a{
-        text-decoration: none;
-    }
-
-    div{
-        display: flex;
-        align-items: center;
-    }
-`;
+`
 
 export const LogoContainer = styled.div`
-    text-transform: uppercase;
-    font-family: var(--secondary-font);
-    color: black;
-    display: flex;
     align-items: center;
+    color: black;
     cursor: pointer;
-    ${ fontTypes.brandName }
+    display: flex;
+    font-family: var(--secondary-font);
+    text-transform: uppercase;
+    ${fontTypes.brandName}
+`
 
-    img {
-        width: 60px; 
-    }
-    h1{
-        margin-left: 1rem;
-    }
-
+export const BrandName = styled.h1`
+    margin-left: 1rem;
+    
     @media (max-width: 600px){
-        h1{
-            display: none;
-        }
+        display: none;
     }
-`;
+`
+
+export const LogoImage = styled.img`
+    width: 60px;
+`
 
 export const CartContainer = styled.div`
-    width: 30px;
+    align-items: center;
+    display: flex;
     height: 30px;
     position: relative;
-`;
+    width: 30px;
+`
 
 export const CartImage = styled.img`
-    width: 30px;
-    height: 30px;
-    background-size: contain;
     background-repeat: no-repeat;
+    background-size: contain;
     cursor: pointer;
-`;
+    height: 30px;
+    width: 30px;
+`
 
 export const CartBadge = styled.p`
-    width: 20px;
-    height: 20px;
+    align-items: center;
     background-color: var(--highlight-color);
-    position: absolute;
     border-radius: 50%;
+    color: var(--secondary-color);
+    display: none;
+    font-family: var(--secondary-font);
+    height: 20px;
+    justify-content: center;
+    position: absolute;
+    ${fontTypes.caption}
     right: -5px;
     top: -5px;
-    color: var(--secondary-color);
-    font-family: var(--secondary-font);
-    ${ fontTypes.caption }
-    justify-content: center;
-    align-items: center;
-    display: none;
-`;
+    width: 20px;
+`

@@ -1,9 +1,11 @@
-export const API_BASE_URL = 'https://wizeline-academy.cdn.prismic.io/api/v2';
+export const API_BASE_URL = 'https://wizeline-academy.cdn.prismic.io/api/v2'
 
 export const URL_PARAMS = {
     featured: '[[at(document.tags, ["Featured"])]]',
     searchTerm: '[[fulltext(document, "{searchTerm}")]]',
-    productId: '[[:d=at(document.id,"{productId}")]]',
-};
+    productId: '[[:d=at(document.id,"{productId}")]]'
+}
 
-export const NUMBER_OF_PRODUCTS_TO_DISPLAY = 12;
+export const NUMBER_OF_PRODUCTS_TO_DISPLAY = 12
+
+export const apiRef = 'YXc6vhIAACsAyYIc'

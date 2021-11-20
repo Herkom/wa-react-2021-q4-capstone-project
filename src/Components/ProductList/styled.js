@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const H1Header = styled.h1`
     font-size: 2rem;
-    text-align: center;
     margin: 2rem 0;
-`;
+    text-align: center;
+`
 export const ProductContainer = styled.ul`
     display: grid;
     gap: 1.5rem;
@@ -23,23 +23,23 @@ export const ProductContainer = styled.ul`
             align-items: center;
         }
     }
-`;
+`
 export const ProductListSection = styled.section`
+    align-items: flex-start;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
     
     @media (max-width: 600px) {
         flex-direction: column;
         align-items: center;
     }
-`;
+`
 export const CategoriesContainer = styled.form`
-    margin: 2rem 0 2rem 3rem;
-    padding: 1rem;
     border: 1px solid grey;
     font-size: 1.5rem;
+    margin: 2rem 0 2rem 3rem;
+    padding: 1rem;
 
     @media(max-width: 600px){
         font-size: 1.5rem;
@@ -63,8 +63,8 @@ export const CategoriesContainer = styled.form`
     }
 
     label{
-        display: flex;
         align-items: center;
+        display: flex;
 
         @media(max-width: 600px){
             margin: 1rem 0;
@@ -73,30 +73,30 @@ export const CategoriesContainer = styled.form`
 
     input[type='checkbox']{
         height: 20px;
-        width: 20px;
         margin-right: 0.5rem;
+        width: 20px;
 
         @media(max-width: 600px){
             height: 25px;
             width: 25px;
         }
     }
-`;
+`
 
 export const PaginatorContainer = styled.div`
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
     margin-top: 2rem;
+    width: 100%;
 
     img{
-        height: 35px;
-        width: 35px;
         background-color: grey;
         border-radius: 50%;
-        padding: 10px 5px;
         cursor: pointer;
+        height: 35px;
+        padding: 10px 5px;
+        width: 35px;
     }
     ul{
         display: flex;
@@ -107,39 +107,39 @@ export const PaginatorContainer = styled.div`
         }
     }
     li{
+        align-items: center;
+        border: 1px solid #ccc;
+        border-radius: 50%;
         cursor: pointer;
         display: flex;
-        align-items: center;
+        font: 400 0.8rem/1.5rem 'Mulish',sans-serif;
+        height: 2rem;
         justify-content: center;
         margin: 0 0.5rem;
-        border-radius: 50%;
-        border: 1px solid #ccc;
         width: 2rem;
-        height: 2rem;
-        font: 400 0.8rem/1.5rem 'Mulish',sans-serif;
 
         @media( max-width:600px ){
             margin: 0 0.3rem;
         }
     }
-`;
+`
 
 export const SkeletonContainer = styled.div`
-    width: 15rem;
-    height: 23rem;
-    border-radius: 15px;
     border: 1px rgba(0, 0, 0, 0.2) solid;
-    
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
+    
+    height: 23rem;
+    width: 15rem;
 
     @media(max-width: 600px){
         margin: 0 auto;
     }
-`;
+`
 export const SkeletonAnimation = styled.div`
-    background: rgba(0, 0, 0, 0.11);
     animation: skeletonAnimation 1s ease-in-out infinite;
+    background: rgba(0, 0, 0, 0.11);
 
     @keyframes skeletonAnimation {
         0% {
@@ -153,24 +153,24 @@ export const SkeletonAnimation = styled.div`
         }
     }
 
-`;
+`
 export const SkeletonText = styled(SkeletonAnimation)`
     height: 1rem;
     margin: 1rem auto;
-`;
+`
 export const SkeletonImg = styled(SkeletonAnimation)`
-    margin: 1rem;
     height: 10rem;
-`;
+    margin: 1rem;
+`
 export const SkeletonCategory = styled(SkeletonText)`
     width: 50%;
-`;
+`
 export const SkeletonName = styled(SkeletonText)`
     width: 90%;
-`;
+`
 export const SkeletonSKU = styled(SkeletonText)`
     width: 30%;
-`;
+`
 export const SkeletonPrice = styled(SkeletonText)`
     width: 25%;
-`;
+`

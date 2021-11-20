@@ -1,4 +1,4 @@
-const rem = true;
+const rem = true
 
 const fontSizesPx = [
     '8px',
@@ -10,8 +10,8 @@ const fontSizesPx = [
     '32px',
     '36px',
     '40px',
-    '48px',
-];
+    '48px'
+]
 
 const fontSizesRem = [
     '0.5rem',
@@ -23,12 +23,12 @@ const fontSizesRem = [
     '2rem',
     '2.25.rem',
     '2.5rem',
-    '3rem',
-];
+    '3rem'
+]
 
-const fontSizes = rem ? fontSizesRem : fontSizesPx;
-const fontWeights = [400, 600, 800];
-const lineHeights = [10, 15, 20, 24, 29, 34, 39, 43, 48, 58];
+const fontSizes = rem ? fontSizesRem : fontSizesPx
+const fontWeights = [400, 600, 800]
+const lineHeights = [10, 15, 20, 24, 29, 34, 39, 43, 48, 58]
 
 export const fontTypes = {
     brandName: `
@@ -51,7 +51,7 @@ export const fontTypes = {
         line-height: ${lineHeights[5]}px;
         font-weight: ${fontWeights[2]};
     `,
-    subtitleMobile:`
+    subtitleMobile: `
         font-size: ${fontSizes[3]};
         line-height: ${lineHeights[3]}px;
         font-weight: ${fontWeights[2]};
@@ -124,5 +124,6 @@ export const fontTypes = {
         font-size: ${fontSizes[0]};
         line-height: ${lineHeights[0]}px;
         font-weight: ${fontWeights[0]};
-        text-decoration-line: line-through;`,
-};
+        text-decoration-line: line-through;
+    `
+}

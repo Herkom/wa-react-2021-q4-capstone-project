@@ -1,31 +1,30 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router";
+import React, { useState } from 'react'
+import { useHistory } from 'react-router'
 
 import { SearchInputForm } from './styled'
 
 const SearchInput = () => {
     const [searchInputValue, setSearchInputValue] = useState('')
 
-    let history = useHistory();
+    const history = useHistory()
 
     const handleSearch = (event) => {
-        
-        event.preventDefault();
-        const searchWord = searchInputValue;
+        event.preventDefault()
+        const searchWord = searchInputValue
 
-        console.log(searchWord);
+        console.log(searchWord)
 
         if (searchWord) {
-            history.push(`/search?q=${searchWord}`);
-            history.go(0);
+            history.push(`/search?q=${searchWord}`)
+            history.go(0)
         }
     }
 
-    const handleChange = (event) =>{
+    const handleChange = (event) => {
         setSearchInputValue(event.target.value)
     }
 
-    return(
+    return (
         <SearchInputForm onSubmit={handleSearch}>
             <input
                 type='text'
@@ -39,6 +38,6 @@ const SearchInput = () => {
             </button>
         </SearchInputForm>
     )
-};
+}
 
 export default SearchInput

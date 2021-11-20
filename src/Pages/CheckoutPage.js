@@ -1,32 +1,33 @@
-import { useMyCartContext } from "Context/GlobalContext";
+import React from 'react'
+
+import { useMyCartContext } from 'Context/GlobalContext'
 
 import {
     ShoppingCartTableHeader,
-    ShoppingCartDataCell,
-} from 'Components/ShoppingCartPage/styled';
+    ShoppingCartDataCell
+} from 'Components/ShoppingCartPage/styled'
 
 import {
     CheckoutForm
-} from 'Components/CheckoutPage/styled';
-import Button from "Components/Button/Button";
-import { Link } from "react-router-dom";
+} from 'Components/CheckoutPage/styled'
+import Button from 'Components/Button/Button'
+import { Link } from 'react-router-dom'
 
-const CheckoutPage = () =>{
-    const {myCart, total} = useMyCartContext();
+const CheckoutPage = () => {
+    const { myCart, total } = useMyCartContext()
 
-    return(
-        <>
-            
+    return (
+        <React.Fragment>
             <CheckoutForm>
                 <h1>This is the Checkout page</h1>
-                <label for="fname">Name</label>
-                <input type="text" id="fname" name="fname"/>
-                <label for="femail">Email</label>
-                <input type="text" id="femail" name="femail"/>
-                <label for="fzipcode">post/zip</label>
-                <input type="text" id="fzipcode" name="fzipcode"/>
-                <label for="fnotes">Notes</label>
-                <textarea name="fnotes" rows="4" cols="50"></textarea>
+                <label htmlFor='fname'>Name</label>
+                <input type='text' id='fname' name='fname'/>
+                <label htmlFor='femail'>Email</label>
+                <input type='text' id='femail' name='femail'/>
+                <label htmlFor='fzipcode'>post/zip</label>
+                <input type='text' id='fzipcode' name='fzipcode'/>
+                <label htmlFor='fnotes'>Notes</label>
+                <textarea name='fnotes' rows='4' cols='50'></textarea>
 
                 <table>
                     <thead>
@@ -54,13 +55,13 @@ const CheckoutPage = () =>{
                     </tfoot>
                 </table>
                 <Button>Place order</Button>
-                <Link to="/cart">
+                <Link to='/cart'>
                     <Button>Go back to cart</Button>
                 </Link>
 
             </CheckoutForm>
-        </>
-    ) 
+        </React.Fragment>
+    )
 }
 
 export default CheckoutPage

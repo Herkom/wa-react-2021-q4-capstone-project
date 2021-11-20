@@ -1,39 +1,39 @@
-import styled from 'styled-components';
-import { fontTypes } from "styles/baseFonts";
+import styled from 'styled-components'
+import { fontTypes } from 'styles/baseFonts'
 
 export const SliderCSS = styled.div`
-    position: relative;
-    width: ${props => props.width}px;
-    height: ${props => props.height ? `${props.height}px` : '100%' };
+    height: ${props => props.height ? `${props.height}px` : '100%'};
     margin: 0 auto;
     overflow: hidden;
+    position: relative;
     white-space: nowrap;
-`;
+    width: ${props => props.width}px;
+`
 
 export const Container = styled.ul`
+    display: flex;
+    height: 100%;
     transform: translateX(-${props => props.translate}px);
     transition: transform ease-out ${props => props.transition}s;
-    height: 100%;
     width: ${props => props.width}px;
-    display: flex;
-`;
+`
 
 export const SlideItem = styled.li`
     height: 100%;
-    width: ${props => props.width}px;
     position: relative;
+    width: ${props => props.width}px;
 
     img{
         width: 100%;
     }
-`;
+`
 
 export const InfoContainer = styled.div`
+    bottom: 25%;
     display: flex;
     flex-direction: column;
-    position: absolute;
-    bottom: 25%;
     left: 10%;
+    position: absolute;
 
     @media(max-width:600px){
         left: 0%;
@@ -41,54 +41,54 @@ export const InfoContainer = styled.div`
         width: 100%;
         background-color: white;
     }
-`;
+`
 
 export const Header = styled.h2`
+    background: white;
     font-family: var(--main-font);
-    text-transform: capitalize;
     ${fontTypes.titleDesktop};
     padding: 2rem;
     padding-bottom:1rem;
-    background: white;
+    text-transform: capitalize;
 
     @media(max-width:600px){
         ${fontTypes.titleMobile};
         padding: 1.3rem 2rem 0.5rem;
         white-space: normal;
     }
-`;
+`
 
 export const Description = styled.p`
+    background: white;
     font-family: var(--secondary-font);
-    text-transform: capitalize;
     ${fontTypes.paragraph};
     padding: 0 2rem 2rem 2rem;
-    background: white;
+    text-transform: capitalize;
 
     @media(max-width:600px){
         padding-bottom: 1.3rem;
     }
-`;
+`
 
 export const SVG = styled.div`
-    display: flex;
-    position: absolute;
-    top: calc( 50% - 65px );
-    ${props => props.direction === 'right' ? `right: 25px` : `left: 25px`};
-    height: 65px;
-    width: 65px;
-    justify-content: center;
+    align-items: center;
     background: none;
     border: 2px solid white;
+    ${props => props.direction === 'right' ? 'right: 25px' : 'left: 25px'};
     border-radius: 50%;
     cursor: pointer;
-    align-items: center;
+    display: flex;
+    height: 65px;
+    justify-content: center;
+    position: absolute;
+    top: calc( 50% - 65px );
     transition: all ease-in 0.1s;
+    width: 65px;
 
     &:hover {
-        transform: scale(1.1);
         background: #e4986a;
         border: 2px solid #e4986a;
+        transform: scale(1.1);
     }
 
     img {
@@ -103,27 +103,27 @@ export const SVG = styled.div`
         height: 50px;
         width: 50px;
     }
-`;
+`
 
 export const DotContainer = styled.div`
-    position: absolute;
-    bottom: 25px;
-    width: 100%;
-    display: flex;
     align-items: center;
+    bottom: 25px;
+    display: flex;
     justify-content: center;
-`;
+    position: absolute;
+    width: 100%;
+`
 
 export const Dot = styled.span`
-    padding: 5px;
-    margin-right: 15px;
-    cursor: pointer;
-    border-radius: 50%;
     background: ${props => props.active ? 'black' : 'white'};
+    border-radius: 50%;
     box-shadow: 0px 1px 1px gray;
+    cursor: pointer;
+    margin-right: 15px;
+    padding: 5px;
 
     @media (max-width: 600px){
         padding: 10px;
         margin: 0 10px;
     }
-`;
+`
